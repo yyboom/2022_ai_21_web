@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- loginimpl이라는 곳에 전달하고 전달 방법은 가려지게 post방법으로 전달할 것 -->
+	<form action="/loginimpl" method="post">
+	<!-- filedset은 form요소에서 연관된 것들을 묶을 때 사용-->
+	<!-- form은 한번밖에 사용할 수 없기 때문 -->
+	<fieldset>
+		<!-- fieldset의 콘텐츠 설명임 -->
+		<legend>LOGIN</legend>
+		<label for="id">ID</label><!-- 라벨이 나오게 됨 ID를 출력하는 라벨의 명칭을 id로함 -->
+		<!-- id의 라벨을 가지고 있는 곳에 input이 들어가게 한다. -->
+		<!-- 이때 input의 타입은 텍스트 타입으로 넣어주고 완성된 id는 name이고 이를 우리는 여기서 fid로 명할 것이다. -->
+		<input id="id" type="text" name="fid">
+		<br>
+		<label for="pwd">PWD</label><!-- 라벨이 나오게 됨 PWD를 출력하는 라벨의 명칭을 pwd로함 -->
+		<!-- pwd의 라벨을 가지고 있는 곳에 input이 들어가게 한다. -->
+		<!-- 이때 input의 타입은 password 타입으로 넣어주고 완성된 pwd는 name이고 이를 우리는 여기서 fpwd로 명할 것이다. -->
+		<input id="pwd" type="password" name="fpwd">
+		<br>
+		<!-- 완성된 id와 password를 제출할 수 있게 함. -->
+		<!-- 이때 타입은 submit이고 LOGIN이라고 적힌 곳을 선택해야 하므로 value로 지정 -->
+		<input type="submit" value="LOGIN">
+	</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<!-- registerimpl이라는 곳에 전달하고 전달 방법은 가려지게 post방법으로 전달할 것 -->
+	<form action="/registerimpl" method="post">
+	<!-- filedset은 form요소에서 연관된 것들을 묶을 때 사용-->
+	<!-- form은 한번밖에 사용할 수 없기 때문 -->
+	<fieldset>
+		<!-- fieldset의 콘텐츠 설명임 -->
+		<legend>REGISTER</legend>
+		<!-- 각 요소의 웹에서 보여질 이름을 ID,PWD,AGE,BIRTH -->
+		<!-- 타입은 각각의 속성에 맞게 지정, 다시 이 요소의 변수명을 naming함 -->
+		ID<input type="text" name="id"><br>
+		PWD<input type="password" name="pwd"><br>
+		AGE<input type="number" name="age"><br>
+		BIRTH<input type="date" name="birth"><br>
+		
+		HOBBY<br>
+		<!-- checkbox는 여러개 선택 가능 -->
+		<!-- value는 내가 입력해야할때가 아닌 선택해야 할때 생성됨! 선택지들을 value변수를 두고 나열함 -->
+		<!-- 각 요소의 웹에서 보여질 이름을 Train,Study,Netplex,Music-->
+		<!-- 타입은 각각의 속성에 맞게 지정, 다시 이 요소의 변수명을 naming함 -->
+		<input type="checkbox" name="hobby" value="t">Train
+		<input type="checkbox" name="hobby" value="s">Study
+		<input type="checkbox" name="hobby" value="n">Netplex
+		<input type="checkbox" name="hobby" value="s">Music
+		<br>
+		
+		GENDER<br>
+		<!-- radio는 중복 선택 불가 -->
+		<!-- value는 내가 입력해야할때가 아닌 선택해야 할때 생성됨! 선택지들을 value변수를 두고 나열함 -->
+		<!-- 각 요소의 웹에서 보여질 이름을 Female,male, Aje-->
+		<!-- 타입은 각각의 속성에 맞게 지정, 다시 이 요소의 변수명을 naming함 -->
+		Female<input type="radio" name="gender" value="f">
+		male<input type="radio" name="gender" value="m">
+		Aje<input type="radio" name="gender" value="a">
+		<br>
+		<!--  option도 선택할 수 있게 해주는 것 -->
+		Car<br>
+		<select name="car">
+			<option value="k1">K1</option>
+			<option value="k2">K2</option>
+			<option value="k3">K3</option>
+		</select>
+		<br>
+		<!-- 뭔가를 적거나 넣을 수 있도록 칸을 만듦 보통 자소서에서 많이 이방식으로 칸을 생성함 -->
+		TA<textarea rows="10" cols="30" name="ta"></textarea>
+		<br>
+		<!-- 완성된 register를 제출할 수 있게 함. -->
+		<!-- 이때 타입은 submit이고 REGISTER라고 적힌 곳을 선택해야 하므로 value로 지정 -->
+		<input type="submit" value="REGISTER">
+			
+	</fieldset>
+	</form>
+</body>
+</html>
