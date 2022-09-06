@@ -1,0 +1,17 @@
+@charset "EUC-KR";
+/* 어디에 무엇을 줄지 처음 태깅을 하고 스타일을 입힘, style지정 방법은 위에 세가지가 전부임*/
+	h1{
+		color:red;
+		background:black;
+	}
+	#hh1{ 
+		color:yellow;
+		background:blue;
+	}
+	.cc1{
+		color:pink;
+		background:red;
+	}
+	p > span{ /* 어디 안에 있는 span인지 타겟팅 필요 */ 
+		color:red;
+	}

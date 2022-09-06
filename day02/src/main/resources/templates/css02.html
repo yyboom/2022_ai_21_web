@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	a{
+		color:black;
+		text-decoration: none;
+	}
+	a:hover{
+		color:red;
+	}
+	ul,ol{
+		list-style: none;
+	}
+	ul > li:nth-child(1)>a{ /* li밑에 a에 text가 있음 */
+		color:blue;
+		background:yellow;
+	}
+	input[type="text"]{ /* input안에 속성을 가져옴 */
+		background: gray;
+		
+	}
+	h1:hover{ /* 마우스를 옮기면서 색이 변화하는 것 */
+		color:red;
+		background: black;
+	}
+	p::first-line{
+		color:pink;
+	}
+	p::selection{
+		background:yellow;
+	}
+</style>
+</head>
+<body>
+		<h1>CSS02</h1>
+		<h2><a href="#">Click</a></h2> <!-- 들어가지 않는 것들을 막아놓은 것 -->
+		<ul>
+			<li><a href="#">MENU1</a></li>
+			<li><a href="#">MENU2</a></li>
+			<li><a href="#">MENU3</a></li>
+			<li><a href="#">MENU4</a></li>
+			<li><a href="#">MENU5</a></li>
+		</ul>
+		<p>ParagraphParagraphParagraphParagraphParagraphParagraphParagraph
+		ParagraphParagraphParagraphParagraphParagraphParagraphParagraph
+		ParagraphParagraphParagraphParagraphParagraphParagraphParagraph</p>
+		<form>
+			ID<input type="text" name="id"><br>
+			PWD<input type="password" name="pwd"><br>
+			<input type="submit" value="LOGIN">
+		</form>
+</body>
+</html>

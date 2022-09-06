@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	div{
+		width:100px;
+		height:100px;
+		/* block만 가능함 */
+		/* float:left; */
+		position: absolute;
+		opacity : 0.8;
+	}
+	#d1{
+		background: red;
+		margin:30px 30px;
+		/* 마우스를 여기에 가져다가 올렸을 때 튀어나오게 한다. 앞으로 튀어나오는 순서 */
+		z-index:100;
+		overflow:outo;
+	}
+	#d2{
+		background: blue;
+		margin:60px 60px;
+		z-index:10;
+	}
+	#d3{
+		background: green;
+		margin:90px 90px;
+		z-index:2;
+	}
+</style>
+</head>
+<body>
+	<div id="d1">
+		<p>Parag</p>
+	</div>
+	<div id="d2"></div>
+	<div id="d3"></div>
+</body>
+</html>

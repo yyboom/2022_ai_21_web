@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	canvas{
+	width:300px;
+	height:300px;
+	border:2px solid red;
+	}
+</style>
+<script>
+//body안에 있는 것들이 다 시행된 후 canvas에 그림을 그려라
+	window.onload = function(){
+		 var c=document.getElementById("mycanvas");
+		 var ctx=c.getContext("2d");
+		 ctx.fillStyle="#FF0000";
+		 ctx.arc(10,20,50,0, Math.PI*2);
+		 ctx.fill();
+	
+	};
+</script>
+</head>
+<body>
+	<h1>Start Page</h1>
+	<h2><a href="/login">login page</a></h2>
+	<h2><a href="/register">register Page</a></h2>
+	<h2><a href="/css?page=css01">CSS01</a></h2>
+	<h2><a href="/css?page=css02">CSS02</a></h2>
+	<h2><a href="/css?page=css03">CSS03</a></h2>
+	<h2><a href="/css?page=css04">CSS04</a></h2>
+	<h2><a href="/css?page=css05">CSS05</a></h2>
+	<h2><a href="/css?page=css06">CSS06</a></h2>
+	<h2><a href="/css?page=css07">CSS07</a></h2>
+	<h2><a href="/css?page=css08">CSS08</a></h2>
+	<canvas id="mycanvas"></canvas>
+</body>
+</html>

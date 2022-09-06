@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<!-- form은 하나의 html당 하나만 쓸 수 있음 -->
+	<form action="/registerimpl" method="get">
+		ID<input type="text" name="id"><br>
+		PWD<input type="password" name="pwd"><br>
+		AGE<input type="number" name="age"><br>
+		Birth<input type="date" name="birth"><br>
+		<!-- chechbox는 여러개 선택 가능 -->
+		<!-- value는 내가 입력해야할때가 아닌 선택해야 할때 생성됨! 선택지들을 value변수를 두고 나열함 -->
+		HOBBY<br>
+		<input type="checkbox" name="hobby" value="t">Train
+		<input type="checkbox" name="hobby" value="s">Study
+		<input type="checkbox" name="hobby" value="n">Netplex
+		<br>
+		GENDER<br>
+		<!-- radio는 중복 선택 불가 -->
+		Female<input type="radio" name="gender" value="f">
+		male<input type="radio" name="gender" value="m">
+		Aje<input type="radio" name="gender" value="a">
+		<br>
+		Car<br>
+		<select name="car">
+			<option value="k1">K1</option>
+			<option value="k2">K2</option>
+			<option value="k3">K3</option>
+		</select>
+		<br>
+<!-- IMAGE<input type="file"=10 name ="img"> -->
+		TA<textarea rows="10" cols="30" name="ta"></textarea>
+		<br>
+		<input type="submit" value="REGISTER">
+	
+	</form>
+</body>
+</html>

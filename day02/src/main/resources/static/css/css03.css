@@ -1,0 +1,24 @@
+@charset "EUC-KR";
+/* css 페이지를 따로 떼어서 쓸 때는 import로 씀!*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&family=Noto+Sans+KR:wght@900&family=Roboto+Mono:ital,wght@1,700&display=swap');
+	#cust_tb{
+		width:300px;
+		border:2px solid black;
+		border-collapse: collapse; /* 기본으로 띄어진 부분 없애줌 */
+	}
+	#cust_tb , tr , td, th{
+		border:1px solid black;
+	}
+	#cust_tb > thead > tr > th{
+		font-family: 'Roboto Mono', monospace;
+	}
+	#cust_tb > tbody > tr > td{
+		text-align:center;
+		font-family: 'Noto Sans KR', sans-serif;
+	}
+	#cust_tb > tbody > tr:nth-child(2n+1){
+		background:yellow;
+	}
+	#cust_tb > tbody > tr:hover{
+		background: gray;
+	}

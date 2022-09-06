@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/loginimpl" method="post" > <!-- server에게 누구에게 전달하고 어떻게 전달할 것인지! -->
+	<fieldset>
+		<legend>LOGIN</legend>
+	<!-- id, pwd값을 loginimpl이라는 곳으로 전송(maincontroller의) -->
+	<!-- method=get은 화면 주소에 보여지게 하는 것, 안보이게 하는 것은 post방식임 -->
+		<label for="id">ID</label>
+		<input id="id" type="text" name="fid">
+		<br>	
+		<label for="pwd">PWD</label>
+		<input id="pwd" type="password" name="fpwd">
+		<br>
+		<input type="submit" value="LOGIN">
+	</fieldset>
+	</form>
+</body>
+</html>
