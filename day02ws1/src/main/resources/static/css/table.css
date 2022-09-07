@@ -2,15 +2,13 @@
 /* css 페이지를 따로 떼어서 쓸 때는 import로 씀!*/
 /* 폰트를 사용하기 위해서 하는 import */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&family=Noto+Sans+KR:wght@900&family=Roboto+Mono:ital,wght@1,700&display=swap');
-/* 여기서 css파일을 연결해봐야한다.*/
-/* ---(수정할 부분)--- */
-/* ---------------------*/
+
 	#cust_tb{
 		width:300px;
 		border:2px solid black;
 		border-collapse: collapse; /* 기본으로 띄어진 부분 없애줌 */
-		/* css에 이미지를 가지고 오고 싶을 때 직접 css folder에 이미지를 추가해서 사용함*/
-		background-image: url("screen.jpeg");
+		/* css에 이미지를 가지고 오고 싶을 때 상위 디렉토리들도 같이 불러와 줘야하기 때문에 ../로 사용함*/
+		background-image: url("../img/screen.jpeg");
 	}
 	#cust_tb , tr , td, th{
 	/* 검정색 실선을 그려줘라 */
