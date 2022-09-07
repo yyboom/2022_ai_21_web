@@ -5,11 +5,43 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/css01.css"> <!-- 기준점은 늘 static file임! -->
 <style>
-
+	*{
+		margin:0;
+		padding:0;
+	}
+	a{
+		text-decoration:none;
+		color:black;
+	}
+	ul, li{
+		list-style:none;
+	}
+	ul{
+		width:500px;
+		height:50px;
+		border-top:3px solid black;
+		border-bottom:3px solid black;
+		margin: 0 auto;
+	}
+	ul > li{
+		float:left;
+		margin:0 20px;
+		line-height:40px; /* 전체적인 높이를 ul과 맞춤*/
+	}
+	ul > li > a:hover{ /* 마우스를 올리면 색이 빨강색으로 변해라*/
+		color:red;
+		font-weight:bold;
+	}
 </style>
 </head>
 <body>
-	<h1>CSS07</h1>
+	<ul><!-- 일단은 다른 곳으로 목가게 막아놈 -->
+		<li><a href="#">HTML5</a></li>
+		<li><a href="#">CSS3</a></li>
+		<li><a href="#">Javascript</a></li>
+		<li><a href="#">jQuery</a></li>
+		<li><a href="#">AJAX</a></li>
+	</ul>
 
 </body>
 </html>

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* Big Button CSS start ----------------------------------------------- */
+.big_bt {
+	width: 150px;
+	height: 70px;
+	background-color: red;
+	border: 10px solid white;
+	border-radius: 30px;
+	box-shadow: 5px 5px 5px gray;
+}
+
+.big_bt >a {
+	line-height: 70px; /* 전체적인 높이를 맞춤 */
+	display: block;
+	text-align: center;
+/*	font-family: 'Aclonica', sans -serif; 폰트 사이즈 */
+
+	font-size: 200%;
+	color: white;
+	font-weight: bold;
+}
+
+.big_bt>a:hover {
+	color: yellow;
+}
+
+.big_bt:hover {
+	background-color: blue;
+}
+
+/* Big Button CSS end ----------------------------------------------- */

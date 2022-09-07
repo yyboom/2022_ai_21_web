@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* Global Header CSS ----------------------------------------------------- */
+*{
+	margin:0;
+	padding:0;	
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+ul , ol{
+	list-style:none;
+}
+
+/* Start Header CSS ----------------------------------------------------- */
+
+hedaer{
+	width : 800px;
+	height:120px;
+	margin: 0 auto;
+	background: red;
+}
+header > h1{
+	width : 500px;
+	height:50px;
+	text-align:center;
+	margin: 0 auto;
+}
+header > #h_bottom{
+	width:500px;
+	height:40px;
+	border-top:3px solid black;
+	border-bottom:3px solid black;
+	margin: 0 auto;
+}
+header > #h_bottom > li{
+	float:left;
+	margin:0 20px;
+	line-height:40px; /* 전체적인 높이를 ul과 맞춤*/
+}
+header > #h_bottom > li > a:hover{ /* 마우스를 올리면 색이 빨강색으로 변해라*/
+	color:white;
+	font-weight:bold;
+}
+header > #h_top{
+	width:800px;
+	height:20px;
+}
+header > #h_top > li{
+	float:right;
+}
+
+/* End Header CSS ----------------------------------------------------- */
+/* Start Nav CSS ----------------------------------------------------- */
+
+nav{
+	width : 800px;
+	height:30px;
+	margin: 0 auto;
+	background: #997000;	
+}
+
+/* End Nav CSS ----------------------------------------------------- */
+/* Start Section CSS ----------------------------------------------------- */
+
+section{
+	width : 800px;
+	height:600px;
+	margin: 0 auto;
+	background: #050505;
+}
+section > aside{
+	float:left;
+}
+.big_bt {
+	width: 120px;
+	height: 50px;
+	background-color: red;
+	border: 3px solid white;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px gray;
+}
+
+.big_bt >a {
+	line-height: 50px; /* 전체적인 높이를 맞춤 */
+	display: block;
+	text-align: center;
+/*	font-family: 'Aclonica', sans -serif; 폰트 사이즈 */
+
+	font-size: 130%;
+	color: white;
+	font-weight: bold;
+}
+section > #left_a{
+	width:150px;
+	height:600px;
+	background: #F5D6D6;	
+}
+section > #center_a{
+	width:550px;
+	height:600px;
+	background: #D5D9D6;	
+}
+section > #center_a > div{
+	width:500px;
+	height:250px;
+	border:2px solid black;
+	margin:10px auto;	
+}
+section > #center_a > div:hover{
+	background: gray;
+	border:2px solid red;
+}
+section > #right_a{
+	width:100px;
+	height:600px;
+	background: #F9D6D6;	
+}
+section > #right_a > img{
+	display:black;
+	margin:5px auto;	
+}
+
+/* End Section CSS ----------------------------------------------------- */
+/* Start Footer CSS ----------------------------------------------------- */
+
+footer{
+	width : 800px;
+	height:30px;
+	margin: 0 auto;
+	background: black;
+}
+
+/* End Footer CSS ----------------------------------------------------- */

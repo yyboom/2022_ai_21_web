@@ -7392,3 +7392,30 @@ Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotati
 	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2633)
 	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.<init>(AnnotationUtils.java:2121)
 	... 22 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 09:16:36.065
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css06.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 09:32:40.075
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css07.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 09:34:25.758
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css06.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 10:14:36.626
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css08.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 10:27:43.405
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css06.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 11:02:09.427
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css07.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 11:08:20.483
+!MESSAGE [Error]	No config file for c:\web\Day1\day01\src\main\resources\templates\nextp4.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 11:08:34.764
+!MESSAGE [Error]	No config file for c:\web\Day1\day01_exam\src\main\java\templates\nextp4.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-07 11:18:31.583
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\src\main\resources\templates\css09.html
