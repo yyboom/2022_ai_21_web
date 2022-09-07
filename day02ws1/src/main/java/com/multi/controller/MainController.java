@@ -46,7 +46,7 @@ public class MainController {
 	}
 	@RequestMapping("/table")
 	public String table() {
-		return "register";
+		return "table";
 	}
 
 }
