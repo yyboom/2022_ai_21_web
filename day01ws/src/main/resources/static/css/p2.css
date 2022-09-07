@@ -1,0 +1,11 @@
+@charset "EUC-KR";
+h1{
+	color : red;
+}
+thead{
+	color : green;
+	font-weight:bold;
+}
+tbody{
+	color : black;
+}
