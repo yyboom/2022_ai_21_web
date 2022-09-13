@@ -95,5 +95,65 @@ public class JsController {
 		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
 		return "main";
 	}
+	@RequestMapping("/js08")
+	public String js08(Model model) {
+		//main.html의 javascript의 js_left와 같은 모양으로 나와야 함!
+		model.addAttribute("left","js/js_left");
+		//je08의 center로 바꿔줘야함!
+		//js폴더에 js08이라는 center모양을 불러오게 되는 것!
+		model.addAttribute("center","js/js08");
+		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
+		return "main";
+	}
+	@RequestMapping("/js09")
+	public String js09(Model model) {
+		//main.html의 javascript의 js_left와 같은 모양으로 나와야 함!
+		model.addAttribute("left","js/js_left");
+		//je09의 center로 바꿔줘야함!
+		//js폴더에 js09이라는 center모양을 불러오게 되는 것!
+		model.addAttribute("center","js/js09");
+		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
+		return "main";
+	}
+	@RequestMapping("/js10")
+	public String js10(Model model) {
+		//main.html의 javascript의 js_left와 같은 모양으로 나와야 함!
+		model.addAttribute("left","js/js_left");
+		//je10의 center로 바꿔줘야함!
+		//js폴더에 js10이라는 center모양을 불러오게 되는 것!
+		model.addAttribute("center","js/js10");
+		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
+		return "main";
+	}
+	@RequestMapping("/js11")
+	public String js11(Model model) {
+		//main.html의 javascript의 js_left와 같은 모양으로 나와야 함!
+		model.addAttribute("left","js/js_left");
+		//js11의 center로 바꿔줘야함!
+		//js폴더에 js11이라는 center모양을 불러오게 되는 것!
+		model.addAttribute("center","js/js11");
+		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
+		return "main";
+	}
+	@RequestMapping("/js12")
+	public String js12(Model model) {
+		//main.html의 javascript의 js_left와 같은 모양으로 나와야 함!
+		model.addAttribute("left","js/js_left");
+		//js12의 center로 바꿔줘야함!
+		//js폴더에 js12이라는 center모양을 불러오게 되는 것!
+		model.addAttribute("center","js/js12");
+		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
+		return "main";
+	}
+	@RequestMapping("/js13")
+	public String js13(Model model) {
+		//main.html의 javascript의 js_left와 같은 모양으로 나와야 함!
+		model.addAttribute("left","js/js_left");
+		//je13의 center로 바꿔줘야함!
+		//js폴더에 js13이라는 center모양을 불러오게 되는 것!
+		model.addAttribute("center","js/js13");
+		//전체적인 화면은 main.html과 같아야 함. left랑 center만 바뀌게 해주는 것
+		return "main";
+	}
 
 }

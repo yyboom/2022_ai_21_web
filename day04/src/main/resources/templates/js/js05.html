@@ -1,1 +1,38 @@
+<style>
+	#center_div{
+		width:200px;
+		border:2px solid red;
+	}
+</style>
+
+<script>
+window.onload = function(){
+	//이 배열의 내용을 center에 뿌린다.
+	var data = ['ABC','DEF','GHI','JKL'];//서버에서 가져올 데이터임
+	var result =' ';
+	//id를 가져올 때는 #로, class를 가져올 때는 .
+	var center = document.querySelector('#center_div');
+	
+	
+	for(var i in data){
+		result += '<h1>'+data[i]+'</h1>';
+	};
+	center.innerHTML = result;
+
+};	
+
+/* 	var a =[1,2,3,4,5];
+/* 	for(var i=0;i<a.length;i++){
+		console.log(a[i]);
+	}; */
+	
+/*	//확장 for문이 새로 나옴
+	//파이썬에서도 자주 쓰는 것
+	for(var i in a){
+		console.log(a[i]);
+	}; */
+	
+</script>
+
 <h1>JS05 Center</h1>
+<div id="center_div"></div>

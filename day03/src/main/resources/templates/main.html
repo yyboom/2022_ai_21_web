@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+  <title>Bootstrap Example</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -68,7 +69,7 @@
   
 <div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav" th:insert="${center} ? ${center} : center">
+    <div class="col-sm-2 sidenav" th:insert="${left} ? ${left} : left">
     </div>
     <!-- main center start -->
     <!-- center라는 변수의 값이 존재 하면 aboutcenter와 같은 것을 쓰고 아니면 center.html을 사용 -->

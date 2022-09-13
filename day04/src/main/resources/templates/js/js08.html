@@ -1,0 +1,25 @@
+<script>
+function f1(){
+	return 10;
+};
+
+function f2(g){
+	return 100 *g();
+};
+//함수 안에 함수를 넣는 것이 가능함!
+var result = f2(f1);
+alert(result);
+
+//return을 함수로도 해줄 수 있음
+function a1(){
+	return function(){
+		return 100;
+	};
+};
+
+var r = a1();
+var data = r();
+alert(data);
+</script>
+
+<h1>JS08 Center</h1>
