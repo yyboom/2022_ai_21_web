@@ -1,7 +1,7 @@
 package com.multi.controller;
 
 import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -61,5 +61,21 @@ public class MainController {
 	 * left는 geo_left로 변경해라! model.addAttribute("center","geo_center");
 	 * model.addAttribute("left","geo_left"); return "main"; }
 	 */
+	
+	//loginimpl
+	@RequestMapping("/loginimpl")
+	//model에다가 값을 담아서 login ok, login fail page로 보내줌
+	public String loginimpl(String id, String pwd, Model model) {
+		//id가 qqqq, pwd가 1111이면 loginok로, 아니면 loginfail로 보내줌
+		if(id.equals("qqqq") && pwd.equals("1111")){
+			//center에 loginok를 넣어서 보낼 것이다!
+			model.addAttribute("center","loginok");
+			//loginid라는 곳에 id를 넣어서 보낼 것이다!
+			model.addAttribute("loginid",id);
+		}else {
+			model.addAttribute("center","loginfail");
+		}
+		return "main";
+	}
 
 }

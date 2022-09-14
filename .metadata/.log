@@ -398,3 +398,261 @@ Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotati
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-09-13 16:07:03.820
 !MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js08.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:06:39.679
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js09.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:06:42.100
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js10.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:06:44.435
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js11.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:06:46.774
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js12.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:06:48.532
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js13.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:07:10.914
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js08.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:07:32.943
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js08.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:10:28.123
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js09.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:10:36.413
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js08.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 09:11:07.330
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\js\js07.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:30:55.758
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq01.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:31:09.209
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq02.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:31:11.302
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq03.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:31:12.935
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq04.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:31:14.798
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq05.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:31:16.586
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq06.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 10:31:18.466
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq07.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 11:32:37.142
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq02.html
+
+!ENTRY org.springframework.ide.eclipse.beans.core 1 0 2022-09-14 13:27:29.924
+!MESSAGE Error occured processing 'com.multi.Day04Application'
+!STACK 0
+org.springframework.core.annotation.AnnotationConfigurationException: Attribute 'proxyBeanMethods' in annotation [org.springframework.boot.SpringBootConfiguration] is declared as an @AliasFor nonexistent attribute 'proxyBeanMethods' in annotation [org.springframework.context.annotation.Configuration].; nested exception is java.lang.NoSuchMethodException: org.springframework.context.annotation.Configuration.proxyBeanMethods()
+	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.<init>(AnnotationUtils.java:2128)
+	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.from(AnnotationUtils.java:2095)
+	at org.springframework.core.annotation.AnnotationUtils.getAttributeAliasNames(AnnotationUtils.java:1751)
+	at org.springframework.core.annotation.AnnotationUtils.isSynthesizable(AnnotationUtils.java:1710)
+	at org.springframework.core.annotation.AnnotationUtils.synthesizeAnnotation(AnnotationUtils.java:1493)
+	at org.springframework.core.annotation.AnnotationUtils.synthesizeAnnotationArray(AnnotationUtils.java:1597)
+	at org.springframework.core.annotation.AnnotationUtils.getAnnotations(AnnotationUtils.java:231)
+	at org.springframework.core.type.classreading.AnnotationAttributesReadingVisitor.visitEnd(AnnotationAttributesReadingVisitor.java:76)
+	at org.springframework.asm.ClassReader.readAnnotationValues(ClassReader.java:2020)
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:676)
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:527)
+	at org.springframework.ide.eclipse.core.java.classreading.JdtConnectedMetadataReader.<init>(JdtConnectedMetadataReader.java:45)
+	at org.springframework.ide.eclipse.core.java.classreading.JdtMetadataReaderFactory.getMetadataReader(JdtMetadataReaderFactory.java:53)
+	at org.springframework.ide.eclipse.core.java.classreading.CachingJdtMetadataReaderFactory.getMetadataReader(CachingJdtMetadataReaderFactory.java:38)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.registerBean(BeansJavaConfig.java:368)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:229)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotation.Configuration.proxyBeanMethods()
+	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2633)
+	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.<init>(AnnotationUtils.java:2121)
+	... 22 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:29:22.338
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\loginfail.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:29:51.904
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\loginok.html
+
+!ENTRY org.springframework.ide.eclipse.beans.core 1 0 2022-09-14 13:32:13.969
+!MESSAGE Error occured processing 'com.multi.Day04Application'
+!STACK 0
+org.springframework.core.annotation.AnnotationConfigurationException: Attribute 'proxyBeanMethods' in annotation [org.springframework.boot.SpringBootConfiguration] is declared as an @AliasFor nonexistent attribute 'proxyBeanMethods' in annotation [org.springframework.context.annotation.Configuration].; nested exception is java.lang.NoSuchMethodException: org.springframework.context.annotation.Configuration.proxyBeanMethods()
+	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.<init>(AnnotationUtils.java:2128)
+	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.from(AnnotationUtils.java:2095)
+	at org.springframework.core.annotation.AnnotationUtils.getAttributeAliasNames(AnnotationUtils.java:1751)
+	at org.springframework.core.annotation.AnnotationUtils.isSynthesizable(AnnotationUtils.java:1710)
+	at org.springframework.core.annotation.AnnotationUtils.synthesizeAnnotation(AnnotationUtils.java:1493)
+	at org.springframework.core.annotation.AnnotationUtils.synthesizeAnnotationArray(AnnotationUtils.java:1597)
+	at org.springframework.core.annotation.AnnotationUtils.getAnnotations(AnnotationUtils.java:231)
+	at org.springframework.core.type.classreading.AnnotationAttributesReadingVisitor.visitEnd(AnnotationAttributesReadingVisitor.java:76)
+	at org.springframework.asm.ClassReader.readAnnotationValues(ClassReader.java:2020)
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:676)
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:527)
+	at org.springframework.ide.eclipse.core.java.classreading.JdtConnectedMetadataReader.<init>(JdtConnectedMetadataReader.java:45)
+	at org.springframework.ide.eclipse.core.java.classreading.JdtMetadataReaderFactory.getMetadataReader(JdtMetadataReaderFactory.java:53)
+	at org.springframework.ide.eclipse.core.java.classreading.CachingJdtMetadataReaderFactory.getMetadataReader(CachingJdtMetadataReaderFactory.java:38)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.registerBean(BeansJavaConfig.java:368)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:229)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotation.Configuration.proxyBeanMethods()
+	at java.base/java.lang.Class.getDeclaredMethod(Class.java:2633)
+	at org.springframework.core.annotation.AnnotationUtils$AliasDescriptor.<init>(AnnotationUtils.java:2121)
+	... 22 more
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:39:27.303
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq02.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:24.734
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Debug Failure. False expression.
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:24.738
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Debug Failure. False expression.
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:24.740
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:24.741
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:24.750
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:24.750
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Cannot read property 'charCount' of undefined
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:28.755
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: length < 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:28.756
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: length < 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:28.762
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: length < 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:28.764
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: length < 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:28.765
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: length < 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 13:44:28.766
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: length < 0
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 14:04:09.622
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq04.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 14:22:42.093
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq05.html
+
+!ENTRY org.eclipse.wst.xml.ui 4 4 2022-09-14 14:23:06.859
+!MESSAGE null
+!STACK 0
+org.eclipse.jface.text.BadLocationException
+	at org.eclipse.wst.sse.core.internal.text.GenericPositionManager.addPosition(GenericPositionManager.java:86)
+	at org.eclipse.wst.sse.core.internal.text.GenericPositionManager.addPosition(GenericPositionManager.java:71)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.addPosition(BasicStructuredDocument.java:861)
+	at org.eclipse.jface.text.link.LinkedModeUI.setExitPosition(LinkedModeUI.java:742)
+	at org.eclipse.jface.text.link.LinkedModeUI.setExitPosition(LinkedModeUI.java:761)
+	at org.eclipse.wst.xml.ui.internal.contentassist.MarkupCompletionProposal.getLinkedPositions(MarkupCompletionProposal.java:103)
+	at org.eclipse.wst.xml.ui.internal.contentassist.MarkupCompletionProposal.apply(MarkupCompletionProposal.java:54)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.insertProposal(CompletionProposalPopup.java:997)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.insertSelectedProposalWithMask(CompletionProposalPopup.java:946)
+	at org.eclipse.jface.text.contentassist.CompletionProposalPopup.verifyKey(CompletionProposalPopup.java:1371)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$InternalListener.verifyKey(ContentAssistant.java:811)
+	at org.eclipse.jface.text.TextViewer$VerifyKeyListenersManager.verifyKey(TextViewer.java:481)
+	at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:70)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1046)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:760)
+	at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:6099)
+	at org.eclipse.swt.custom.StyledText.lambda$1(StyledText.java:5793)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1061)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1046)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1088)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1084)
+	at org.eclipse.swt.widgets.Widget.wmChar(Widget.java:1513)
+	at org.eclipse.swt.widgets.Control.WM_CHAR(Control.java:4884)
+	at org.eclipse.swt.widgets.Canvas.WM_CHAR(Canvas.java:345)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4762)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4930)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3624)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1157)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:644)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 14:36:20.417
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq06.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 14:37:31.975
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq04.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 14:37:37.003
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq03.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 14:37:45.212
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq02.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 15:05:40.126
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq03.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 15:06:13.645
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq04.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 15:18:47.452
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq04.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 15:36:13.987
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq01.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-14 16:17:11.388
+!MESSAGE [Error]	No config file for c:\web\Day1\day04\src\main\resources\templates\jq\jq07.html

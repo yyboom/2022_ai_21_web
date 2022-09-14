@@ -1,26 +1,21 @@
 <script>
-//함수 선언
-function f1(){
-	
-	return 10;
+
+var data = 'alert("ALERT")';
+//위와 같은 string을 실행시켜 주는것이 eval임
+eval(data);
+
+var result = 10+ 10 + 10;
+alert(eval(result));
+
+var result2 = 10 / 0;//ininity
+alert(result2);
+
+if(isFinite(result2)){
+	alert('Finite');
+}else{
+	alert('Infinite');
 };
-//함수 실행
-var f2 = function(){
-	return 20;;
-};
-
-var r1 = f1();
-var r2 = f2();
-
-alert(r1+r2);
-
-function f3(a,b){
-	return a * b;
-};
-
-var result = f3(10,20);
-alert(result);
 </script>
 
 
-<h1>JS07 Center</h1>
+<h1>JS09 Center</h1>

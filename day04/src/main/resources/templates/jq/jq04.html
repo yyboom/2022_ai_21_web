@@ -1,1 +1,46 @@
+<style>
+	#content{
+		width:500px;
+		border:2px solid red;
+	}
+</style>
+<script>
+$(document).ready(function(){
+	var cnt = 0;
+	$('#append').click(function(){
+		cnt++;
+		$('#content').append('<h1>append'+cnt+'</h1>');
+	});
+
+	$('#prepend').click(function() {
+		cnt++;
+		$('#content').append('<h1>prepend'+cnt+'</h1>');	
+	});
+		
+	$('#after').click(function() {
+		cnt++;
+		$('#content').append('<h1>after'+cnt+'</h1>');
+	});
+	$('#before').click(function() {
+		cnt++;
+		$('#content').append('<h1>before'+cnt+'</h1>');
+	});
+	//remove는 요소자체를 다 지우는 것
+	$('#remove').click(function() {
+		$('#content').remove();
+	});
+	//empty는 요소의 내용을 지우는 것
+	$('#empty').click(function() {
+		$('#content').empty();
+	});
+});
+</script>
+
 <h1>jQuery04 Center</h1>
+<button id="append">APPEND</button>
+<button id="prepend">PREPEND</button>
+<button id="after">AFTER</button>
+<button id="before">BEFORE</button>
+<button id="remove">REMOVE</button>
+<button id="empty">EMPTY</button>
+<div id="content"></div>

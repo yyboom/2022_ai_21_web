@@ -1,1 +1,33 @@
+<script>
+//string이던 int이던 다 들어올 수 있음. script언어의 특징
+function calc(a){
+	if(typeof(a) == 'string'){
+		if(a == '='){
+			//=일때 넣어놓은 식을 가져와라
+			var num = $('input[name="result"]').val();
+			//넣어준 값을 실행시켜 주는것:eval
+			var result = eval(num);
+			//최종 값을 뿌려준다.
+			var num = $('input[name="result"]').val(result);
+			return;
+		}
+		var num = $('input[name="result"]').val();
+		$('input[name="result"]').val(num+a);
+	}else if(typeof(a) == 'number'){
+		//값을 일단 가지고 와서
+		var num = $('input[name="result"]').val();
+		//원래 있던 num에다가 새로 넣어준 a를 넣어주라
+		$('input[name="result"]').val(num+a);
+	}
+};
+</script>
+
 <h1>jQuery06 Center</h1>
+<input type="text" name="result" readonly="readonly"><br>
+<!-- button을 누르면 cal(~)의 함수를 호출하라 -->
+<button onclick="calc(1);">1</button>
+<button onclick="calc(2);">2</button>
+<button onclick="calc(3);">3</button>
+<button onclick="calc('+');">+</button>
+<button onclick="calc('-');">-</button>
+<button onclick="calc('=');">=</button>

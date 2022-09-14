@@ -1,26 +1,66 @@
 <script>
-//함수 선언
-function f1(){
+window.onload = function(){
+	//밑에서 hh1 id를 가지고 있는 것을 가져옴
+	var hh1 = document.querySelector('#hh1');
+	var hh2 = document.querySelector('#hh2');
+	var hh3 = document.querySelector('#hh3');
+	var hh4 = document.querySelector('#hh4');
 	
-	return 10;
+	hh4.onclick = function(){
+		var c = comfirm('Are you going now...');
+		if(c){
+			location.href = 'http://www.daum.net';
+		}else{
+			//위의 function의 실행을 그만두어라!
+			return;
+		};
+	};
+	//event를 h1부분에 넣어줬기 때문에 hh1을 누르면 alert발생
+	hh1.onclick = function(){
+		//h1의 text(JS10)을 가져올때도, 뿌릴 때도 innerHTML임
+		//가져올때
+		var txt = hh1.innerHTML;
+		//뿌릴때
+		//hh2의 text를 변화시켜줌
+		hh2.innerHTML = txt;
+		//alert(txt);
+		//hh1을 누르면 해당하는곳으로 이동해줌
+		window.open('http://www.naver.com');
+	};
+	hh2.onclick = function(){
+		location.href = 'http://www.naver.com';
+	};
+	//2초에 한번씩 function을 실행하라
+	setInterval(function(){
+		//현재 컴퓨터의 날짜를 가져와서
+		var data = new Data();
+		//문자로 바꾼 후
+		var str = data.toString();
+		//뿌린다.
+		hh4.innerHTML = str;
+		
+	},2000);
+	
+	//like 시한폭탄
+	setTimeout(() => {
+		locarion.href = "http://www.naver.com";
+	}, 5000);
+	
+	//별찍기
+	var si = setInterval(()=>{
+		var str = hh4.innerHTML;
+		str += '*';
+		hh4.innerHTML = str;
+	},500);
+	//한정된 시간만 돌게 함
+	setTimeout(() => {
+		clearInterval(si);
+	}, 5000);
 };
-//함수 실행
-var f2 = function(){
-	return 20;;
-};
-
-var r1 = f1();
-var r2 = f2();
-
-alert(r1+r2);
-
-function f3(a,b){
-	return a * b;
-};
-
-var result = f3(10,20);
-alert(result);
 </script>
 
 
-<h1>JS07 Center</h1>
+<h1 id="hh1">JS10 Center</h1>
+<h2 id="hh2"></h2>
+<h3><a id="hh3" href="#">Daum</a></h3>
+<h4 id="hh4"></h4>
