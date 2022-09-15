@@ -1,4 +1,51 @@
-<!-- //¿ø·¡´Â center¸¸ ¹Ù²î´Â °ÍÀÌ ¾Æ´Ñ ÇÑ¹ø¿¡ ½ÃÀÛºÎÅÍ ³¡±îÁö ´Ù½Ã À¥ÀÌ ±¸¼ºµÇ¾î¼­ ³ªÅ¸³ªÁö°ÔµÇ´Â °Í!(syncronous)
-	//ºñµ¿±â´Â À¥ÀÌ ¸ØÃçÀÖ´Â »óÅÂ¿¡¼­ µû·Î µ¹¾Æ°¡´Â °Í(asyncronous)ex)³¯¾¾, ÁÖ½Ä µîµî ½Ç½Ã°£À¸·Î ¹Ù²ñ
-	//=>¼­¹ö¿¡ ¿äÃ»ÇÒ ¶§ µü ±×ºÎºĞ¸¸ ¹Ù²î°Ô²û ¿äÃ»À» ÇÔ! -->
-<h1>AJAX Center</h1>
+<style>
+#result{
+	width:500px;
+	border:2px solid red;
+}
+</style>
+<script>
+function display(data){
+	var result = '';
+	//forë¬¸
+	$(data).each(function(index,item){
+		//resultì— ë°›ì•„ì˜¨ ë°ì´í„°ë¥¼ ê³„ì† ë”í•´ì„œ ë„£ì–´ì¤Œ!
+		result += '<h3>';
+		result += item.num + ' '+item.title+' '+item.updown;
+		result += '</h3>';
+	});
+	$('#result').html(result);
+};
+
+//dataë¥¼ ë°›ì•„ì„œ displayë¡œ ë³´ë‚´ì¤Œ
+function getdata(){
+	$.ajax({
+		//ì—¬ê¸°ë‹¤ê°€ dataë¥¼ ìš”ì²­í•¨(ì„œë²„ì—ì„œëŠ” JSONí˜•ì‹ìœ¼ë¡œ dataë¥¼ ë‚´ë ¤ë³´ë‚¼ ê²ƒ!)
+		url:'/getdata',
+		//acontrollerì—ì„œ jsonarrayì˜ í˜•íƒœë¡œ ë‚´ë ¤ë³´ë‚´ì¤Œ
+		success:function(data){
+			display(data);
+		}
+	});
+};
+
+$(document).ready(function(){
+	//ë²„íŠ¼ì„ í´ë¦­í•˜ë©´
+	$('#get_bt').click(function(){
+		//fun getdataë¡œ ë³´ë‚¼ê²ƒì´ê³ 
+		getdata();
+		
+	});
+	//3ì´ˆì— í•œë²ˆì”© dataë¥¼ ê°€ì ¸ì™€ì„œ ë°”ê¿”ì¤Œ!
+	setInterval(() => {
+		getdata();
+	}, 3000);
+});
+</script>
+<meta charset="utf-8">
+<!-- //ì›ë˜ëŠ” centerë§Œ ë°”ë€ŒëŠ” ê²ƒì´ ì•„ë‹Œ í•œë²ˆì— ì‹œì‘ë¶€í„° ëê¹Œì§€ ë‹¤ì‹œ ì›¹ì´ êµ¬ì„±ë˜ì–´ì„œ ë‚˜íƒ€ë‚˜ì§€ê²Œë˜ëŠ” ê²ƒ!(syncronous)
+	//ë¹„ë™ê¸°ëŠ” ì›¹ì´ ë©ˆì¶°ìˆëŠ” ìƒíƒœì—ì„œ ë”°ë¡œ ëŒì•„ê°€ëŠ” ê²ƒ(asyncronous)ex)ë‚ ì”¨, ì£¼ì‹ ë“±ë“± ì‹¤ì‹œê°„ìœ¼ë¡œ ë°”ë€œ
+	//=>ì„œë²„ì— ìš”ì²­í•  ë•Œ ë”± ê·¸ë¶€ë¶„ë§Œ ë°”ë€Œê²Œë” ìš”ì²­ì„ í•¨! -->
+<h3>AJAX Center</h3>
+<button id="get_bt">GET DATA</button>
+<div id="result"></div>

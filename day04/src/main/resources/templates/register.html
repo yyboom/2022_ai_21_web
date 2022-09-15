@@ -18,6 +18,24 @@ $(document).ready(function(){
 			$('#pspan').text('InCorrect');
 		}
 	});
+	//ajax활용
+	//register화면에서 칠때마다 서버로 보내주고 가져오게끔 함
+	//id가 이미 있는 아이디인지 아닌지를 판별해줌
+	$('#id').keyup(function(){
+		var id = $(this).val();
+		$.ajax({
+			url:'/checkid',
+			//JSON형식으로 보내줌(입력한 id를!)
+			data:{'cid':id},
+			success:function(result){
+				if(result == 't'){
+					$('#ispan').text('available');
+				}else{
+					$('#ispan').text('not availiable');
+				}
+			}
+		});
+	});
 });
 </script>
 
@@ -30,6 +48,7 @@ $(document).ready(function(){
       <label for="id">ID:</label>
       <!-- name은 서버에 전송될때 사용되는 변수! -->
       <input type="text" class="form-control" id="id" placeholder="Enter ID" name="id">
+      <span id="ispan"></span>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
