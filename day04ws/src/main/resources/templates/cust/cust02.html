@@ -1,0 +1,32 @@
+<script>
+//화면이 다 뿌려지면 function()뒤에 있는 것이 실행될 것이다!
+window.onload = function(){
+	alert('Alert');//''와 ""다 쓸 수 있음
+	//javascript변수 선언은 var임
+	//화명(문서)에서 가져와라 
+	var h1 = document.querySelector('h1');
+	//h1태그에다가 HTML을 넣겠다.
+	//h1.innerHTML = 'TEXT..';
+	h1.innerHTML = '<a href="">CLICK</a>';
+	
+	var h2 = document.querySelector('#hh2');
+	h2.innerHTML = 'H2 TEXT';
+	
+	var h3 = document.querySelector('.cc1');
+	h3.innerHTML = 'CC1 Class';
+	
+	//console창에 올려줌 보통은 만든 것이 잘 작동하는지 확인해보기 위해 사용
+	var a = 10;
+	var b = 20;
+	
+	console.log('RESULT:'+(a+b));
+	h2.innerHTML = (a+b);
+};
+
+</script>
+
+<h1>JS02 Center</h1>
+<h2 id="hh2">JS02 Center</h2>
+<h3 class="cc1">JS02 Center</h3>
+<h4 class="cc1">JS02 Center</h4>
+<h5>JS02 Center</h5>

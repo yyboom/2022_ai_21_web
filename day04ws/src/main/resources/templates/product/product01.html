@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script>
+//기본적인 jquery구조
+//$().ready();
+
+//document가 준비되면 function을 실행하라
+$(document).ready(function(){
+	//$뒤에가 target임
+	//center 밑에 h1,h2
+	$('.center > h1').css('color','red');
+	$('.center > h2').text('replace');
+	//속성 두가지 => JSON
+	$('.center > h2').css({'color':'red','background':'black'});
+	$('.center > h3').click(function(){
+		location.href="http://www.naver.com";
+	});
+});
+</script>
+
+<div class="center">
+	<h1>jQuery01 Center</h1>
+	<h2>Header2</h2>
+	<h3>Header3</h3>
+</div>

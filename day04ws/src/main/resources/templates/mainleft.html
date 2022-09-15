@@ -1,0 +1,39 @@
+<script>
+//가져온 data를 화면에 뿌려주는 함수
+function display(data){
+	$('#result').text(data);
+};
+
+//data를 가져온다.
+function getdata(){
+	$.ajax({
+		//누구한테 요청할 것인지
+		url:'/gettime',
+		//result내려옴(html이 아닌 결과 값이 내려옴)=>restcontroller을 쓰는 이유임!
+		//acontroller에서 받아온 정보를 alert창에 띄움
+		success:function(result){
+			display(result);
+		},
+		//error일때 호출할 것
+		error:function(){
+			$('#result').text('Error...')
+		}
+	});
+};
+
+//다시 데이터를 보내준다.
+$(document).ready(function(){
+	//5초에 한번씩 비동기식으로 바꿔줌
+	//비동기 통신
+	getdata();
+	setInterval(() => {
+		getdata();
+	}, 5000);
+});
+</script>
+<h4>Server Time</h4>
+<!-- 서버에 요청해서 비동기식으로 만들어줄 부분 -->
+<!-- //원래는 center만 바뀌는 것이 아닌 한번에 시작부터 끝까지 다시 웹이 구성되어서 나타나지게되는 것!(syncronous)
+	//비동기는 웹이 멈춰있는 상태에서 따로 돌아가는 것(asyncronous)ex)날씨, 주식 등등 실시간으로 바뀜
+	//=>서버에 요청할 때 딱 그부분만 바뀌게끔 요청을 함! -->
+<h6 id="result"></h6>

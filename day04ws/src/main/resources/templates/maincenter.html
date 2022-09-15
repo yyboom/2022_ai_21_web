@@ -1,0 +1,51 @@
+<style>
+#result{
+	width:100%;
+	height:100%;
+}
+</style>
+<script>
+function display(data){
+	var result = '';
+	//for문
+	$(data).each(function(index,item){
+		//result에 받아온 데이터를 계속 더해서 넣어줌!
+		result += '<h3>';
+		result += item.num + ' '+item.title+' '+item.updown;
+		result += '</h3>';
+	});
+	$('#result').html(result);
+};
+
+//data를 받아서 display로 보내줌
+function getdata(){
+	$.ajax({
+		//여기다가 data를 요청함(서버에서는 JSON형식으로 data를 내려보낼 것!)
+		url:'/getdata',
+		//acontroller에서 jsonarray의 형태로 내려보내줌
+		success:function(data){
+			display(data);
+		}
+	});
+};
+
+$(document).ready(function(){
+	//버튼을 클릭하면
+	$('#get_bt').click(function(){
+		//fun getdata로 보낼것이고
+		getdata();
+		
+	});
+	//3초에 한번씩 data를 가져와서 바꿔줌!
+	setInterval(() => {
+		getdata();
+	}, 3000);
+});
+</script>
+<meta charset="utf-8">
+<!-- //원래는 center만 바뀌는 것이 아닌 한번에 시작부터 끝까지 다시 웹이 구성되어서 나타나지게되는 것!(syncronous)
+	//비동기는 웹이 멈춰있는 상태에서 따로 돌아가는 것(asyncronous)ex)날씨, 주식 등등 실시간으로 바뀜
+	//=>서버에 요청할 때 딱 그부분만 바뀌게끔 요청을 함! -->
+<h3>AJAX Center</h3>
+<button id="get_bt">GET DATA</button>
+<div id="result"></div>

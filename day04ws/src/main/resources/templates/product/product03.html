@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+
+<script>
+$(document).ready(function(){
+	//가져올때랑 뿌릴때 같은 data type이여야 함!
+	var str = $('.center > h1').text();
+	//$('.center > h1').text('LOGIN');
+	//html tag를 넣을 수도 있다.
+	$('.center > h1').html('<a href="#">LOGIN</a>');
+	//login_formdp submit이 일어나면 fun을 실행해주겠다.
+	//$('#login_form').submit(function(){
+		//데이터를 가지고옴 
+		//tag에서 attribute를 가져오는 방법은 [에 변수를 가지고옴]
+		//가져올때랑 type같아야함
+		//뿌려졌다가 날라감 => submit은 제어하기가 어려움=>대신'button'을 씀!
+	//id를 입력하는 순간! id_span뒤의 문구를 없애라!
+	$('#login_form > input[name="id"]').keyup(function(){
+		$('#login_form > #id_span').text('');	
+	});
+	//현재 id_form의 입력한 길이가 4 이하 일때 다시 입력하라고 함!
+	$('#login_form > input[name="id"]').blur(function(){
+		///this='#login_form > input[name="id"]'
+		//id값의 val을 가지고 옴
+		var id = $(this).val();
+		if(id.length < 4 ){
+			$('#login_form > #id_span').text('ID는 4자리 이상입니다.');
+			$(this).focus();
+		}
+	});
+	
+	//pwd	
+	$('#login_form > input[name="pwd"]').keyup(function(){
+		$('#login_form > #pwd_span').text('');	
+	});
+	
+		//login버튼을 누르면!
+	$('#login_bt').click(function(){
+		var id = $('#login_form > input[name="id"]').val();
+		var pwd = $('#login_form > input[name="pwd"]').val();
+		//id값이 아무것도 없을 때
+		if(id==''){
+			$('#login_form > #id_span').text('ID는 필수항목입니다.');
+			//id를 입력하지 않으면 더 이상 진행하지 않고 끝난다.
+			return;
+		}
+		if(pwd==''){
+			$('#login_form > #pwd_span').text('PWD는 필수항목입니다.');
+			return;
+		}
+		//서버 전송
+		//서버 프로그램에 어디로 보낼 것인지!(loginimpl)
+		$('#login_form').attr({'action':'/loginimpl','method':'post'});
+		//서버로 전송한다.
+		$('#login_form').submit();
+	});
+	
+});
+</script>
+
+<div class="center">
+<h1>jQuery03 Center</h1>
+
+<form id="login_form">
+	ID<input type="text" name="id"><span id="id_span"></span><br>
+	PWD<input type="password" name="pwd"><span id="pwd_span"></span><br>
+	<!-- <input type="submit" value="LOGIN"> -->
+
+</form>
+<button id="login_bt">LOGIN</button>
+</div>

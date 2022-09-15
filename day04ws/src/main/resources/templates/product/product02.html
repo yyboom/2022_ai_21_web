@@ -1,0 +1,64 @@
+<style>
+	#cust_table{
+		width:300px;
+		border:2px solid red;
+	}
+	.thead{
+		color:red;
+		background:black;
+	}
+</style>
+
+<script>
+$(document).ready(function(){
+	//위에서 만든 css의 class를 가져와서 적용하겠다.
+	$('#cust_table > thead > tr').addClass('thead');
+	//thead부분을 클릭하면
+	$('#cust_table > thead > tr').click(function(){
+		//body부분에 append한다.
+		$('#cust_table > tbody').append('<tr><td>ID</td><td>PWD</td><td>NAME</td></tr>');
+		
+	});
+	//특정 부분 빼고 다(index는 0번째 부터 시작임)
+	$('#cust_table > tbody > tr:not(tr:eq(1))').addClass('thead');
+	//마우스로 대상위에 올라갔다가 나갔다가 올리면 첫번째 fun을, 아니면 두번째 fun을!
+	$('#cust_table > thead > tr').hover(function(){
+		//this하면 위의 타겟을 그대로 가지고 오는 것
+		$(this).addClass('thead');
+		//$('#cust_table > tbody > tr').addClass('thead');
+	},function(){
+		$(this).removeClass('thead');
+		//$('#cust_table > tbody > tr').removeClass('thead');
+	});
+	$('#fin').click(function(){
+		$('cust_table').fadeIn();
+	});
+	$('#fout').click(function(){
+		$('cust_table').fadeOut();
+		
+	});
+	$('#fin').click(function(){
+		$('cust_table').slideDown();
+	});
+	$('#fout').click(function(){
+		$('cust_table').slideUp();
+		
+	});
+});
+</script>
+
+<h1>jQuery02 Center</h1>
+<button id="fin">FADEIN</button>
+<button id="fout">FADEOUT</button>
+<table id="cust_table">
+	<thead>
+		<tr><th>ID</th><th>PWD</th><th>NAME</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>ID</td><td>PWD</td><td>NAME</td></tr>
+		<tr><td>ID</td><td>PWD</td><td>NAME</td></tr>
+		<tr><td>ID</td><td>PWD</td><td>NAME</td></tr>
+		<tr><td>ID</td><td>PWD</td><td>NAME</td></tr>
+		<tr><td>ID</td><td>PWD</td><td>NAME</td></tr>
+	</tbody>
+</table>
