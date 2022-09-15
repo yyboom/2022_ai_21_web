@@ -1,1 +1,78 @@
+<meta charset="utf-8">
+
+<script>
+$(document).ready(function(){
+	//가져올때랑 뿌릴때 같은 data type이여야 함!
+	var str = $('.center > h1').text();
+	//html tag를 넣을 수도 있다.
+	$('.center > h1').html('<a href="#">REGISTER</a>');
+	//register_formdp submit이 일어나면 fun을 실행해주겠다.
+	//id를 입력하는 순간! id_span뒤의 문구를 없애라!
+	$('#register_form > input[name="id"]').keyup(function(){
+		$('#register_form > id_span').text('');	
+	});
+	//현재 id_form의 입력한 길이가 4 이하 일때 다시 입력하라고 함!
+	$('#register_form > input[name="id"]').blur(function(){
+		///this='#register_form > input[name="id"]'
+		//id값의 val을 가지고 옴
+		var id = $(this).val();
+		if(id.length < 4 ){
+			$('#register_form > id_span').text('ID는 4자리 이상입니다.');
+			//$(this).focus();
+		}
+	});
+	
+	//pwd	
+	$('#register_form > input[name="pwd"]').keyup(function(){
+		$('#register_form > pwd_span').text('');	
+	});
+	
+		//REGISTER버튼을 누르면!
+	$('#register_bt').click(function(){
+		var id = $('#register_form > input[name="id"]').val();
+		var pwd = $('#register_form > input[name="pwd"]').val();
+		//id값이 아무것도 없을 때
+		if(id==''){
+			$('#register_form > #id_span').text('ID는 필수항목입니다.');
+			//id를 입력하지 않으면 더 이상 진행하지 않고 끝난다.
+			return;
+		}
+		if(pwd==''){
+			$('#register_form > #pwd_span').text('PWD는 필수항목입니다.');
+			return;
+		}
+		if(name==''){
+			$('#register_form > #name_span').text('NAME는 필수항목입니다.');
+			return;
+		}
+		if(age==''){
+			$('#register_form > #age_span').text('AGE는 필수항목입니다.');
+			return;
+		}
+		if(birth==''){
+			$('#register_form > #birth_span').text('BIRTH는 필수항목입니다.');
+			return;
+		}
+		//서버 전송
+		//서버 프로그램에 어디로 보낼 것인지!(loginimpl)
+		$('#register_form').attr({'action':'/registerimpl','method':'post'});
+		//서버로 전송한다.
+		$('#register_form').submit();
+	});
+	
+});
+</script>
+
+<div class="center">
 <h1>jQuery07 Center</h1>
+
+<form id="register_form">
+	ID<input type="text" name="id"><span id="id_span"></span><br>
+	PWD<input type="password" name="pwd"><span id="pwd_span"></span><br>
+	NAME<input type="text" name="name"><span id="name_span"></span><br>
+	AGE<input type="number" name="age"><span id="age_span"></span><br>
+	BIRTH<input type="date" name="birth"><span id="birth_span"></span><br>
+
+</form>
+<button id="register_bt">REGISTER</button>
+</div>

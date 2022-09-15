@@ -15,7 +15,7 @@ $(document).ready(function(){
 		//뿌려졌다가 날라감 => submit은 제어하기가 어려움=>대신'button'을 씀!
 	//id를 입력하는 순간! id_span뒤의 문구를 없애라!
 	$('#login_form > input[name="id"]').keyup(function(){
-		$('#login_form > id_span').text('');	
+		$('#login_form > #id_span').text('');	
 	});
 	//현재 id_form의 입력한 길이가 4 이하 일때 다시 입력하라고 함!
 	$('#login_form > input[name="id"]').blur(function(){
@@ -23,14 +23,14 @@ $(document).ready(function(){
 		//id값의 val을 가지고 옴
 		var id = $(this).val();
 		if(id.length < 4 ){
-			$('#login_form > id_span').text('ID는 4자리 이상입니다.');
+			$('#login_form > #id_span').text('ID는 4자리 이상입니다.');
 			$(this).focus();
 		}
 	});
 	
 	//pwd	
 	$('#login_form > input[name="pwd"]').keyup(function(){
-		$('#login_form > pwd_span').text('');	
+		$('#login_form > #pwd_span').text('');	
 	});
 	
 		//login버튼을 누르면!
