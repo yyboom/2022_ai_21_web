@@ -80,12 +80,18 @@ function getdata(){
 	//원래는 database안에서 정보를 가져와서 뿌리는 것
 	//ajax로 지도에다가 뿌려보지
 	// /getmarker
-	var data=[
+	$.ajax({
+		url:'/getmarker',
+		success:function(data){
+			displaymarker(data);
+		}
+	});
+/*	var data=[
 		{'title':'국밥집', 'target':'http://www.naver.com', 'lat':33.450901, 'lng': 126.570267},
 		{'title':'짬뽕집', 'target':'http://www.daum.net', 'lat':33.460901, 'lng': 126.580267},
 		{'title':'닭발집', 'target':'http://www.google.com', 'lat':33.440901, 'lng': 126.573267}
 	];
-	displaymarker(data);
+	displaymarker(data);*/
 };
 
 $(document).ready(function(){

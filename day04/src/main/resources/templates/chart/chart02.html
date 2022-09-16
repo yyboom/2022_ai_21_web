@@ -7,7 +7,7 @@
 
 </style>
 <script>
-function display1(result1){
+function display1(result){
 	Highcharts.chart('container1', {
 
 		  title: {
@@ -45,7 +45,7 @@ function display1(result1){
 		    }
 		  },
 
-		  series: result1,
+		  series: result,
 
 		  responsive: {
 		    rules: [{
@@ -121,8 +121,8 @@ function display2(result){
 function getdata1(){
 	$.ajax({
 		url:'/getdata1',
-		success:function(result1){
-			display1(result1);
+		success:function(result){
+			display1(result);
 		}
 	});
 };

@@ -63,6 +63,7 @@ public class AController {
 				jaa.add(r.nextInt(10000)+1);
 			}
 			jo.put("data", jaa);
+			ja.add(jo);
 			
 			
 		}
@@ -205,6 +206,34 @@ public class AController {
 		ja.add(jo4);
 		ja.add(jo5);
 
+		return ja;
+	}
+	
+	@RequestMapping("/getmarker")
+	public Object getmarker() {
+		JSONArray ja = new JSONArray();
+		
+		JSONObject jo1 = new JSONObject();
+		jo1.put("title", "국밥집");
+		jo1.put("target", "http://www.naver.com");
+		jo1.put("lat", 33.450901);
+		jo1.put("lng", 126.570267);
+		ja.add(jo1);
+		
+		JSONObject jo2 = new JSONObject();
+		jo2.put("title", "짬뽕집");
+		jo2.put("target", "http://www.daum.net");
+		jo2.put("lat", 33.460901);
+		jo2.put("lng",126.580267);
+		ja.add(jo2);
+		
+		JSONObject jo3 = new JSONObject();
+		jo3.put("title", "닭발집");
+		jo3.put("target", "http://www.google.com");
+		jo3.put("lat", 33.440901);
+		jo3.put("lng", 126.573267);
+		ja.add(jo3);
+		
 		return ja;
 	}
 }
