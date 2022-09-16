@@ -1,0 +1,26 @@
+<script>
+
+function calc(a){
+	if(typeof(a) == 'string'){
+		if(a == '='){
+			var num = $('input[name="result"]').val();
+			var result = eval(num);
+			$('input[name="result"]').val(result);
+			return;
+		}
+		var num = $('input[name="result"]').val();
+		$('input[name="result"]').val(num+a);
+	}else if(typeof(a) == 'number'){
+		var num = $('input[name="result"]').val();
+		$('input[name="result"]').val(num+a);
+	}
+};
+</script>
+
+<h1>JQ05 Center</h1>
+<input type="text" name="result" readonly="readonly"><br>
+<button onclick="calc(1);">1</button>
+<button onclick="calc(2);">2</button>
+<button onclick="calc(3);">3</button>
+<button onclick="calc('+');">+</button>
+<button onclick="calc('=');">=</button>

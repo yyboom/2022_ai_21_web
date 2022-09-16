@@ -12,10 +12,132 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AController {
 	//maincenter.html에서 gettime으로 시간을 요청하면 여기서 시간을 보내줌(다시 maincenter로!)
-	@RequestMapping("gettime")
+	@RequestMapping("/gettime")
 	public Object gettime(){
 		Date d = new Date();
 		return "Server Time:"+d.toString();
+	}
+	//chart1
+	@RequestMapping("/ch1")
+	public Object ch1(){
+		Random r = new Random();
+		JSONArray ja_data = new JSONArray();
+		for(var i=1; i<=10; i++) {
+			ja_data.add(r.nextInt(30000)+1);
+			
+		}
+		JSONArray ja_cate = new JSONArray();
+		//원래 이부분은 database에서 가져오면 됨!
+		ja_cate.add("한국");
+		ja_cate.add("일본");
+		ja_cate.add("중국");
+		ja_cate.add("영국");
+		ja_cate.add("독일");
+		ja_cate.add("프랑스");
+		ja_cate.add("미국");
+		ja_cate.add("캐나다");
+		ja_cate.add("멕시코");
+		ja_cate.add("러시아");
+
+		//위의 array들을 가지고 JSONobject를 만들어줌
+		JSONObject jo = new JSONObject();
+		//cata라는 이름에는 ja_cate를, data라는 이름에는 ja_data를 넣어주는 것
+		jo.put("cate", ja_cate);
+		jo.put("data", ja_data);
+		return jo;
+	}
+	//chart2-1
+	@RequestMapping("/getdata1")
+	public Object getdata1(){
+		//data의 모양이 배열안에 object가 있고 name, data(다시 []로 되어 있음)라는 atribute가 있는 것 
+		//[{name:'',data:[]},{}...]
+		Random r = new Random();
+		String str = "seoul";
+		JSONArray ja = new JSONArray();
+		for(var i=1; i<=3; i++) {
+			JSONObject jo = new JSONObject();
+			jo.put("name", str+i);
+			JSONArray jaa = new JSONArray();
+			//이중 for문으로 넣어줌!
+			for(var k=1; k<=10; k++) {
+				jaa.add(r.nextInt(10000)+1);
+			}
+			jo.put("data", jaa);
+			
+			
+		}
+;		return ja;
+	}
+	//chart2-2
+	@RequestMapping("/getdata2")
+	public Object getdata2(){
+		//[[],[],[]]배열 안에 배열이 있을 때
+		Random r = new Random();
+		JSONArray ja = new JSONArray();
+		
+		String str = "korea";
+		
+		for(var i=1; i<=20; i++) {
+			JSONArray jaa = new JSONArray();
+			//data의 모양이 첫번째는 string
+			jaa.add(str+i);
+			//data의 모양이 두번째는 int임
+			jaa.add(r.nextInt(100)+1);
+			//만든 배열들을 하나씩 넣어준 것
+			ja.add(jaa);
+		}
+		return ja;
+	}
+	//chart3
+	@RequestMapping("/ch3")
+	public Object ch3(String area){
+		System.out.println(area);
+		//{title:'seoul', data :[[],[]]}
+		JSONObject jo = new JSONObject();
+		if(area.equals("s")){
+			//title
+			jo.put("title", "seoul");
+			//data
+			JSONArray ja = new JSONArray();
+			for(var i=0; i<=5; i++) {
+				JSONArray jaa = new JSONArray();
+				//비율 맞추기
+				jaa.add((i*10)+"대");
+				jaa.add(20);
+				ja.add(jaa);
+			}
+			
+			jo.put("data", ja);
+		}else if(area.equals("b")){
+			//title
+			jo.put("title", "busan");
+			//data
+			JSONArray ja = new JSONArray();
+			for(var i=0; i<=5; i++) {
+				JSONArray jaa = new JSONArray();
+				//비율 맞추기
+				jaa.add((i*10)+"대");
+				jaa.add(20);
+				ja.add(jaa);
+			}
+			
+			jo.put("data", ja);
+		}else if(area.equals("j")) {
+			//title
+			jo.put("title", "jeju");
+			//data
+			JSONArray ja = new JSONArray();
+			for(var i=0; i<=5; i++) {
+				JSONArray jaa = new JSONArray();
+				//비율 맞추기
+				jaa.add((i*10)+"대");
+				jaa.add(20);
+				ja.add(jaa);
+			}
+			
+			jo.put("data", ja);
+		}
+		return jo;
 	}
 	
 	//but 대부분은 이런방식으로 아이디존재 여부를 확인하지 않음

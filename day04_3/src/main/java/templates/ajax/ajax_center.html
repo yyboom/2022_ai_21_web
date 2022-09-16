@@ -1,0 +1,41 @@
+<style>
+#result{
+	width:500px;
+	border: 2px solid red; 
+}
+</style>
+<script>
+function display(data){
+	var result = '';
+	$(data).each(function(index,item){
+		result += '<h3>';
+		result += item.num+' '+item.title+' '+item.updown;
+		result += '</h3>';
+	});
+	$('#result').html(result);
+};
+
+function getdata(){
+	$.ajax({
+		url:'/getdata',
+		success:function(data){
+			display(data);
+		}
+	});
+};
+
+$(document).ready(function(){
+	$('#get_bt').click(function(){
+		getdata();
+	});
+	setInterval(() => {
+		getdata();
+	}, 3000);
+});
+</script>
+
+<meta charset="utf-8">
+
+<h3>AJAX Center</h3>
+<button id="get_bt">GET DATA</button>
+<div id="result"></div>

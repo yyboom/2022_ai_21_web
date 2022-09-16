@@ -1,1 +1,83 @@
+<style>
+#container{
+	width:100%;
+	height:300px;
+	border:2px solid red;
+}
+</style>
+<script>
+function display(result){
+	// Data retrieved from https://netmarketshare.com/
+	Highcharts.chart('container', {
+	    chart: {
+	        plotBackgroundColor: null,
+	        plotBorderWidth: 0,
+	        plotShadow: false
+	    },
+	    title: {
+	        text: result['title'],
+	        align: 'center',
+	        verticalAlign: 'middle',
+	        y: 60
+	    },
+	    tooltip: {
+	        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	    },
+	    accessibility: {
+	        point: {
+	            valueSuffix: '%'
+	        }
+	    },
+	    plotOptions: {
+	        pie: {
+	            dataLabels: {
+	                enabled: true,
+	                distance: -50,
+	                style: {
+	                    fontWeight: 'bold',
+	                    color: 'white'
+	                }
+	            },
+	            startAngle: -90,
+	            endAngle: 90,
+	            center: ['50%', '75%'],
+	            size: '110%'
+	        }
+	    },
+	    series: [{
+	        type: 'pie',
+	        name: 'Browser share',
+	        innerSize: '50%',
+	        data: result['data']
+	    }]
+	});
+
+};
+function getdata(value){
+	$.ajax({
+		url:'/ch3',
+		data:{'area':value},
+		sucess:function(result){
+			display(result);
+		}
+	});
+};
+$(document).ready(function(){
+	$('#sel1').change(function(){
+		var value = $(this).val();
+		//특정 지역의 데이터를 줘!
+		getdata(value);
+	});
+});
+</script>
 <h1>CHART03 Center</h1>
+<div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1">
+  	<option>choice area</option>
+    <option value="s">seoul</option>
+    <option value="b">busan</option>
+    <option value="j">jeju</option>
+  </select>
+</div>
+<div id="container"></div>

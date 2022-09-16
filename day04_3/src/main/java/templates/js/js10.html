@@ -1,0 +1,69 @@
+<script>
+window.onload = function(){
+	var hh1 = document.querySelector('#hh1');
+	var hh2 = document.querySelector('#hh2');
+	var hh3 = document.querySelector('#hh3');
+	var daum = document.querySelector('#daum');
+	
+	daum.onclick = function(){
+		var c = confirm('Are You Going Now ..');
+		if(c){
+			location.href='http://www.daum.net';
+		}else{
+			return;
+		}
+	};
+	
+	hh1.onclick = function(){
+		var txt =  hh1.innerHTML;
+		hh2.innerHTML = txt;
+		window.open('http://www.naver.com');
+	};
+	hh2.onclick = function(){
+		location.href='http://www.naver.com';
+	};
+	
+	setInterval(function(){
+		var date = new Date();
+		var str = date.toString();
+		hh2.innerHTML = str;
+	},1000);
+	
+/* 	setTimeout(() => {
+		location.href='http://www.naver.com';
+	}, 5000); */
+	
+	var si = setInterval(() => {
+		var str = hh3.innerHTML;
+		str += '*';
+		hh3.innerHTML = str;
+	}, 500);
+	
+	setTimeout(() => {
+		clearInterval(si);
+	}, 5000);
+	
+};
+</script>
+
+<h1 id="hh1">JS10 Center</h1>
+<h2 id="hh2"></h2>
+<h3 id="hh3"></h3>
+<h3><a id="daum" href="#">Daum</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,1 +1,82 @@
+<style>
+#container{
+	width:500px;
+	height:400px;
+	border:2px solid red;
+}
+
+</style>
+<script>
+function display(data){
+	Highcharts.chart('container', {
+		chart: {
+	    	type: 'column',
+	        options3d: {
+	            enabled: true,
+	            alpha: 10,
+	            beta: 25,
+	            depth: 70
+	        }
+	    },
+	    title: {
+	        text: 'My chart'
+	    },
+	    subtitle: {
+	        text: 'Source: ' +
+	            '<a href="https://www.ssb.no/en/statbank/table/08804/"' +
+	            'target="_blank">Multi</a>'
+	    },
+	    plotOptions: {
+	        column: {
+	            depth: 25
+	        }
+	    },
+	    xAxis: {
+	    	//data¶ó´Â object¾È¿¡¼­ cate¸¦ ²ôÁý¾î³¿!
+	        categories: data['cate'],
+	        labels: {
+	            skew3d: true,
+	            style: {
+	                fontSize: '16px'
+	            }
+	        }
+	    },
+	    yAxis: {
+	        title: {
+	            text: 'NOK (million)',
+	            margin: 20
+	        }
+	    },
+	    tooltip: {
+	        valueSuffix: ' MNOK'
+	    },
+	    series: [{
+	        name: 'Total imports',
+	        //¹Ø¿¡¼­ ¹Þ¾Æ¿Â getdata()¸¦ »Ñ·ÁÁÜ
+	        //data¶ó´Â object¾È¿¡¼­ data¸¦ ²ôÁý¾î³¿!
+	        data: data['data']
+	    }]
+	});
+};
+function getdata(){
+	//data¹Þ¾Æ¿È
+	$.ajax({
+		url:'/ch1',
+		success:function(data){
+			//data »Ñ¸®±â
+			display(data);
+		}
+	});
+};
+
+$(document).ready(function(){
+	$('#ch1').click(function(){
+		getdata();
+	});
+	//display();
+});
+</script>
 <h1>CHART01 Center</h1>
+<!-- buttonÀ» Å¬¸¯ÇÏ¸é chart°¡ ±×·ÁÁø´Ù. -->
+<button id="ch1">Chart1</button>
+<div id="container"></div>

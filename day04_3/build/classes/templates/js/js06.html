@@ -1,0 +1,32 @@
+ <meta charset="utf-8">
+
+<style>
+	#center_div{
+		width:400px;
+		border:2px solid red; 
+	}
+</style>
+<script>
+window.onload = function(){
+	// JSON
+	var data = [
+		{'num':1,'title':'오징어게임','updown':'up'},
+		{'num':2,'title':'태풍','updown':'down'},
+		{'num':3,'title':'러시아','updown':'up'},
+		{'num':4,'title':'우크라이나','updown':'down'},
+		{'num':5,'title':'전쟁','updown':'up'}
+	];
+	
+	var result = '';
+	var center = document.querySelector('#center_div');
+	for(var i in data){
+		result += '<h3>'+data[i].num +' '+data[i].title+' '+data[i].updown+'</h3>'; 
+	};	
+	
+	center.innerHTML = result;
+};
+</script>
+
+
+<h1>JS06 Center</h1>
+<div id="center_div"></div>
