@@ -57,7 +57,7 @@ function getdata(value){
 	$.ajax({
 		url:'/ch3',
 		data:{'area':value},
-		sucess:function(result){
+		success:function(result){
 			display(result);
 		}
 	});
@@ -75,9 +75,9 @@ $(document).ready(function(){
   <label for="sel1">Select list:</label>
   <select class="form-control" id="sel1">
   	<option>choice area</option>
-    <option value="s">seoul</option>
-    <option value="b">busan</option>
-    <option value="j">jeju</option>
+    <option value="s">Seoul</option>
+    <option value="b">Busan</option>
+    <option value="j">Jeju</option>
   </select>
 </div>
 <div id="container"></div>

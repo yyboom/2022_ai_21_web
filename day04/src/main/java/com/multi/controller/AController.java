@@ -92,15 +92,14 @@ public class AController {
 	//chart3
 	@RequestMapping("/ch3")
 	public Object ch3(String area){
-		System.out.println(area);
 		//{title:'seoul', data :[[],[]]}
 		JSONObject jo = new JSONObject();
 		if(area.equals("s")){
 			//title
-			jo.put("title", "seoul");
+			jo.put("title", "Seoul");
 			//data
 			JSONArray ja = new JSONArray();
-			for(var i=0; i<=5; i++) {
+			for(var i=1; i<=5; i++) {
 				JSONArray jaa = new JSONArray();
 				//비율 맞추기
 				jaa.add((i*10)+"대");
@@ -111,10 +110,10 @@ public class AController {
 			jo.put("data", ja);
 		}else if(area.equals("b")){
 			//title
-			jo.put("title", "busan");
+			jo.put("title", "Busan");
 			//data
 			JSONArray ja = new JSONArray();
-			for(var i=0; i<=5; i++) {
+			for(var i=1; i<=5; i++) {
 				JSONArray jaa = new JSONArray();
 				//비율 맞추기
 				jaa.add((i*10)+"대");
@@ -125,10 +124,10 @@ public class AController {
 			jo.put("data", ja);
 		}else if(area.equals("j")) {
 			//title
-			jo.put("title", "jeju");
+			jo.put("title", "Jeju");
 			//data
 			JSONArray ja = new JSONArray();
-			for(var i=0; i<=5; i++) {
+			for(var i=1; i<=5; i++) {
 				JSONArray jaa = new JSONArray();
 				//비율 맞추기
 				jaa.add((i*10)+"대");
@@ -233,6 +232,78 @@ public class AController {
 		jo3.put("lat", 33.440901);
 		jo3.put("lng", 126.573267);
 		ja.add(jo3);
+		
+		return ja;
+	}
+	@RequestMapping("/getmarker2")
+	public Object getmarker2(String loc) {
+		JSONArray ja = new JSONArray();
+		if(loc.equals("s")) {
+			JSONObject jo1 = new JSONObject();
+			//database에 저장되어 있는 부분
+			jo1.put("title", "국밥집");
+			jo1.put("target", "http://www.naver.com");
+			jo1.put("lat", 37.5286891);
+			jo1.put("lng", 127.061432);
+			ja.add(jo1);
+			
+			JSONObject jo2 = new JSONObject();
+			jo2.put("title", "짬뽕집");
+			jo2.put("target", "http://www.daum.net");
+			jo2.put("lat", 37.5386891);
+			jo2.put("lng",127.021432);
+			ja.add(jo2);
+			
+			JSONObject jo3 = new JSONObject();
+			jo3.put("title", "닭발집");
+			jo3.put("target", "http://www.google.com");
+			jo3.put("lat", 37.5186891);
+			jo3.put("lng", 127.031432);
+			ja.add(jo3);
+		}else if(loc.equals("b")){
+			JSONObject jo1 = new JSONObject();
+			jo1.put("title", "국밥집");
+			jo1.put("target", "http://www.naver.com");
+			jo1.put("lat", 35.1223984);
+			jo1.put("lng", 129.0896448);
+			ja.add(jo1);
+			
+			JSONObject jo2 = new JSONObject();
+			jo2.put("title", "짬뽕집");
+			jo2.put("target", "http://www.daum.net");
+			jo2.put("lat", 35.1113984);
+			jo2.put("lng",129.0896998);
+			ja.add(jo2);
+			
+			JSONObject jo3 = new JSONObject();
+			jo3.put("title", "닭발집");
+			jo3.put("target", "http://www.google.com");
+			jo3.put("lat", 35.1443984);
+			jo3.put("lng", 129.0996448);
+			ja.add(jo3);
+		}else if(loc.equals("j")) {
+			JSONObject jo1 = new JSONObject();
+			jo1.put("title", "국밥집");
+			jo1.put("target", "http://www.naver.com");
+			jo1.put("lat", 33.5199183);
+			jo1.put("lng", 126.6142571);
+			ja.add(jo1);
+			
+			JSONObject jo2 = new JSONObject();
+			jo2.put("title", "짬뽕집");
+			jo2.put("target", "http://www.daum.net");
+			jo2.put("lat", 33.4610901);
+			jo2.put("lng",126.5802671);
+			ja.add(jo2);
+			
+			JSONObject jo3 = new JSONObject();
+			jo3.put("title", "닭발집");
+			jo3.put("target", "http://www.google.com");
+			jo3.put("lat", 33.5810901);
+			jo3.put("lng", 126.5732671);
+			ja.add(jo3);
+		}
+		
 		
 		return ja;
 	}
