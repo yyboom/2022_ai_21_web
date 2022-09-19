@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\eclipse\eclipse"/>
 	<section name="JavaElementSearchActions">
 	</section>
 	<section name="NewPackageWizardPage">
@@ -84,5 +85,21 @@
 		<item key="DIALOG_WIDTH" value="516"/>
 		<item key="DIALOG_HEIGHT" value="691"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item key="GenerateJavadoc" value="false"/>
+	</section>
+	<section name="BuildPathsPropertyPage">
+		<item key="pageIndex" value="2"/>
+	</section>
+	<section name="JarImportWizard">
+		<item key="org.eclipse.ltk.ui.refactoring.sortRefactorings" value="false"/>
+		<list key="org.eclipse.jdt.ui.refactoring.jarHistory">
+			<item value="C:\eclipse\eclipse\lombok.jar"/>
+			<item value="C:\web\lombok.jar"/>
+			<item value="C:\Users\조윤영\OneDrive\문서\ai_21_web\lombok.jar"/>
+		</list>
+		<section name="org.eclipse.ltk.ui.refactoring.settings">
+		</section>
 	</section>
 </section>
