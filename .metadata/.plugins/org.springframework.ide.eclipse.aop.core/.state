@@ -2,10 +2,9 @@
 <aop-reference-model>
 <aop-project name="day04"/>
 <aop-project name="day02"/>
-<aop-project name="day05_1-1"/>
-<aop-project name="day05_1"/>
 <aop-project name="day03_1"/>
 <aop-project name="day01ws"/>
+<aop-project name="day05_1"/>
 <aop-project name="day01_1"/>
 <aop-project name="day01"/>
 <aop-project name="day03"/>
