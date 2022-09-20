@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="day04"/>
 <aop-project name="day02"/>
-<aop-project name="day03_1"/>
-<aop-project name="day01ws"/>
+<aop-project name="day04"/>
 <aop-project name="day05_1"/>
+<aop-project name="day01ws"/>
+<aop-project name="day03_1"/>
 <aop-project name="day01_1"/>
 <aop-project name="day01"/>
 <aop-project name="day03"/>
 <aop-project name="day05"/>
 <aop-project name="day02ws1"/>
 <aop-project name="day04ws"/>
+<aop-project name="day05_2"/>
 </aop-reference-model>

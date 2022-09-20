@@ -29,4 +29,5 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.multi.mapper.ItemMapper"/>
     <fullyQualifiedTypeName name="com.multi.dto.ItemDTO"/>
+    <fullyQualifiedTypeName name="com.multi.biz.ItemBiz"/>
 </qualifiedTypeNameHistroy>
