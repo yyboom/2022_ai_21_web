@@ -5,7 +5,26 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-09-20T19:00:00Z</updated>
+  <updated>2022-09-21T04:06:00Z</updated>
+  <entry>
+    <title>Spring Session 2022.0.0-M3 Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2022/09/20/spring-session-2022-0-0-m3-released" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Rob Winch</name>
+    </author>
+    <id>tag:spring.io,2022-09-20:4918</id>
+    <updated>2022-09-21T04:06:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team, I¡¯m pleased to announce the release of Spring Session &lt;code&gt;2022.0.0-M3&lt;/code&gt;. These releases deliver, enhancements, bug fixes, and dependency upgrades.&lt;br/&gt;For your convenience, Spring Boot will pick up these artifacts with its upcoming releases.&lt;/p&gt;
+&lt;p&gt;The following modules were updated as part of &lt;code&gt;2022.0.0-M3&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Session Core &lt;code&gt;3.0.0-M4&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/3.0.0-M4"&gt;release notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Session Data Redis &lt;code&gt;3.0.0-M4&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/3.0.0-M4"&gt;release notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Session JDBC &lt;code&gt;3.0.0-M4&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/3.0.0-M4"&gt;release notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Session Hazelcast &lt;code&gt;3.0.0-M4&lt;/code&gt; - &lt;a href="https://github.com/spring-projects/spring-session/releases/tag/3.0.0-M4"&gt;release notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Dataflow 2.10.0-M2 Released</title>
     <link rel="alternate" href="https://spring.io/blog/2022/09/20/spring-cloud-dataflow-2-10-0-m2-released" />
@@ -656,55 +675,6 @@ compile &amp;#39;org.springframework.cloud:spring-cloud-starter-netflix-eureka-c
   &lt;li&gt;Migrate your?&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud"&gt;Spring Boot&lt;/a&gt;,?&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/migration/migrate-spring-cloud-to-azure-spring-cloud"&gt;Spring Cloud&lt;/a&gt;,?and?&lt;a href="https://aka.ms/migrate-tomcat-to-azure-spring-cloud-service"&gt;Tomcat&lt;/a&gt;?applications to Azure Spring Apps&lt;/li&gt;
   &lt;li&gt;Wire Spring applications to?&lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/"&gt;interact with Azure services&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;For feedback and questions, please?&lt;a href="mailto:AzureSpringCloud-Talk@service.microsoft.com"&gt;e-mail&lt;/a&gt;?us.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Microsoft is committed to the success of Java developers</title>
-    <link rel="alternate" href="https://spring.io/blog/2022/08/30/microsoft-is-committed-to-the-success-of-java-developers" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2022-08-30:4895</id>
-    <updated>2022-08-30T14:43:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! This is a guest post from our friend &lt;strong&gt;Julia Liuson&lt;/strong&gt;, President, Developer Division, Microsoft&lt;/p&gt;
-&lt;p&gt;As a company, we are committed to making Java developers as efficient and productive as possible. This commitment means empowering you to use any tool, framework, and application server on any operating system. Wherever you are with Java, Microsoft supports your workload with an abundance of choices and with a wide range of developer tools and services. &lt;/p&gt;&lt;h2&gt;&lt;a href="#code-deploy-and-scale-java-your-way" class="anchor" name="code-deploy-and-scale-java-your-way"&gt;&lt;/a&gt;Code, Deploy, and Scale Java Your Way&lt;/h2&gt;
-&lt;p&gt;Today, more and more Java developers are looking at how they can bring their existing Java applications to the cloud?or how to build new cloud-native applications. We have been working to make it easier for you to bring your Java applications to the cloud using the tools and frameworks you love. You can then deploy and scale easily using the same application servers and open-source technologies you already know and trust.&lt;/p&gt;
-&lt;p&gt;&lt;img src = "https://github.com/joshlong/blog-images/blob/master/microsoft-is-committed-to-the-success-of-java-developers-2022-08-30/1.jpg?raw=true" style = " width: 300px; float: left; margin-right: 1em " /&gt; Over the past few years, we¡¯ve forged several strategic partnerships with major vendors in the Java ecosystem. These partnerships empower you to code and deploy without worrying about infrastructure. &lt;a href="https://azure.microsoft.com/en-us/blog/introducing-azure-spring-cloud-fully-managed-service-for-spring-boot-microservices/"&gt;Azure Spring Apps&lt;/a&gt; (jointly developed with Pivotal / VMWare) offers native integrations with third-party application performance monitoring (APM) tools from &lt;a href="https://azure.microsoft.com/en-us/blog/use-new-relic-one-to-effortlessly-monitor-applications-in-azure-spring-cloud/"&gt;New Relic&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/blog/spot-every-spring-boot-application-issue-on-the-spot-using-appdynamics/"&gt;App Dynamics&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/blog/monitor-spring-boot-applications-endtoend-using-dynatrace/"&gt;Dynatrace&lt;/a&gt;, and &lt;a href="https://azure.microsoft.com/en-us/blog/elastic-and-microsoft-azure-unified-observability-for-spring-boot-applications/"&gt;Elastic&lt;/a&gt;. Our other jointly developed offerings include &lt;a href="https://azure.microsoft.com/en-us/blog/deploy-apps-seamlessly-with-red-hat-jboss-eap-on-azure-app-service-now-generally-available/"&gt;Red Hat JBoss EAP on Azure App Service&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/ee/websphere-family"&gt;WebSphere Application Server&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/developer/java/ee/websphere-family"&gt;WebSphere Liberty, and Open Liberty&lt;/a&gt; on Azure, &lt;a href="https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/oracle/oracle-weblogic"&gt;Oracle WebLogic Server&lt;/a&gt; on Azure VMs and &lt;a href="https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/oracle/weblogic-aks"&gt;Azure Kubernetes Service&lt;/a&gt;, and &lt;a href="https://docs.microsoft.com/en-us/azure/partner-solutions/apache-kafka-confluent-cloud/overview"&gt;Apache Kafka for Confluent Cloud&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can also use a wide range of development and DevOps tools?including Visual Studio Code, IntelliJ IDEA, GitHub, Playwright, Apache Maven, Gradle, and many others. These tools enable you to build, test, and bring your Java apps to the cloud while collaborating effectively and saving time and money. &lt;/p&gt;
-&lt;p&gt;Asir Selvasingh from the Java on Azure engineering group has written a detailed paper called &lt;a href="https://cdn.graph.office.net/prod/media/java/code-deploy-scale-java-your-way.pdf"&gt;Code, Deploy, and Scale Java Your Way (view PDF)&lt;/a&gt;. This paper provides a detailed look at the Java ecosystem that Microsoft has carefully curated and invested in for Java developers. &lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/blob/master/microsoft-is-committed-to-the-success-of-java-developers-2022-08-30/2.png?raw=true"  /&gt;
-&lt;p&gt;&lt;a href="https://cdn.graph.office.net/prod/media/java/infographic-code-deploy-scale.pdf"&gt;View Infographic PDF&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#microsoft-relies-on-java-and-we-use-it-a-lot" class="anchor" name="microsoft-relies-on-java-and-we-use-it-a-lot"&gt;&lt;/a&gt;Microsoft relies on Java. And we use it. A lot.&lt;/h2&gt;
-&lt;p&gt;Many people are surprised to learn that we¡¯re using Java to run significant parts of Microsoft?and empower thousands of customers to do the same. Specifically, Bing ? Microsoft¡¯s web search engine, which also powers the search feature in the Windows Start menu ? uses Java to perform indexing-related functions. Beyond Bing, Azure¡¯s infrastructure control plane, and other divisions such as LinkedIn, Minecraft, and Yammer use Java extensively. We have deployed over 2 million JVMs for our internal systems and business needs.&lt;/p&gt;
-&lt;p&gt;We actively support Java community organizations to invest in and help promote the future of Java. We contribute to OpenJDK, and Eclipse Adoptium, Jakarta EE, and MicroProfile in the Eclipse Foundation; we are also a member of the Java Community Process.&lt;/p&gt;
-&lt;p&gt;Over the past several years, thousands of Microsoft customers have moved to Java on Azure, including well-known companies such as &lt;a href="https://customers.microsoft.com/en-us/doclink/adobe-partner-professional-services-azure"&gt;Adobe&lt;/a&gt;, &lt;a href="https://customers.microsoft.com/en-us/story/860509-aia-singapore-drives-performance-enhancements-after-moving-java-applications-to-azure"&gt;AIA&lt;/a&gt;, &lt;a href="https://customers.microsoft.com/en-us/story/1475571259638279673-bosch-delivers-supply-chain-efficiencies-java-azure"&gt;Bosch&lt;/a&gt;, &lt;a href="https://customers.microsoft.com/en-us/story/daimler-manufacturing-azuredevtest"&gt;Daimler&lt;/a&gt;, &lt;a href="https://www.youtube.com/watch?v=fJ_OUNdFXHs"&gt;FedEx&lt;/a&gt;, &lt;a href="https://customers.microsoft.com/en-us/story/jbhunt-travelandtransportation-azure"&gt;J.B. Hunt&lt;/a&gt;, &lt;a href="https://techcommunity.microsoft.com/t5/video-hub/kroger-shares-how-they-migrated-their-stock-management-java/ba-p/2436903"&gt;Kroger&lt;/a&gt;, &lt;a href="https://customers.microsoft.com/en-us/story/maersk-travel-transportation-azure"&gt;Maersk&lt;/a&gt;, &lt;a href="https://customers.microsoft.com/en-us/story/784791-mercedes-benz-r-and-d-creates-container-driven-cars-powered-by-microsoft-azure"&gt;Mercedes Benz&lt;/a&gt;, and &lt;a href="https://customers.microsoft.com/en-us/story/1358540087031302788-swiss-re-accelerates-java-app-modernization-using-azure-spring-cloud"&gt;Swiss Re&lt;/a&gt;. We¡¯ve worked side-by-side with the engineers at these companies to ensure success. Similarly, we work closely with the internal groups at Microsoft who use Java, lending our expertise while learning from theirs. Through such efforts, we¡¯ve amassed a substantial body of insight and expertise towards helping new customers build Java applications on Azure or move existing ones to the cloud?including, for example, how moving to the latest versions of Java can help increase performance and reduce costs.&lt;/p&gt;
-&lt;p&gt;Our engineers and support teams work closely with our customers to run and scale their Java apps efficiently on Azure. Customer success stories, options for customer support, and consistent programming of technical content on Java are all ways Microsoft helps developers succeed.&lt;/p&gt;
-&lt;p&gt;Want to learn more about Microsoft¡¯s focus on Java? We have another new paper by Bruno Borges and Theresa Nguyen from our Java Engineering Group that delves into details of &lt;a href="https://cdn.graph.office.net/prod/media/java/how-microsoft-applies-java.pdf"&gt;how Microsoft applies Java (view PDF)&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I invite you to check out our new web page for Java developers ? developer.microsoft.com/java with the latest content and links to technical documentation, learning paths, and on-demand videos from our conferences and our Java Cloud Developer Advocacy team.&lt;/p&gt;
-&lt;img src = "https://github.com/joshlong/blog-images/blob/master/microsoft-is-committed-to-the-success-of-java-developers-2022-08-30/3.png?raw=true"  /&gt;
-&lt;p&gt;New webpage for Java developers: &lt;a href="https://developer.microsoft.com/java"&gt;developer.microsoft.com/java&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Java developers, I am cheering you on&amp;hellip; Let¡¯s build great apps together! &lt;/p&gt;
-&lt;p&gt;Best,&lt;br/&gt;Julia&lt;/p&gt;&lt;h2&gt;&lt;a href="#resources" class="anchor" name="resources"&gt;&lt;/a&gt;Resources:&lt;/h2&gt;
-&lt;p&gt;Bookmark our new webpage for Java developers:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Visit &lt;a href="https://developer.microsoft.com/java"&gt;developer.microsoft.com/java&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;New papers:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://cdn.graph.office.net/prod/media/java/code-deploy-scale-java-your-way.pdf"&gt;How you can Code, Deploy, and Scale Java Your Way&lt;/a&gt; - By &lt;em&gt;Asir Selvasingh&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://cdn.graph.office.net/prod/media/java/how-microsoft-applies-java.pdf"&gt;How Microsoft applies Java&lt;/a&gt; - By &lt;em&gt;Bruno Borges&lt;/em&gt; and &lt;em&gt;Theresa Nguyen&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Infographics:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="https://cdn.graph.office.net/prod/media/java/infographic-evolution-of-java-at-microsoft.pdf"&gt;The Evolution of Java at Microsoft&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://cdn.graph.office.net/prod/media/java/infographic-code-deploy-scale.pdf"&gt;Code, Deploy, and Scale Java Your Way&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Stay connected:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Follow us on Twitter - &lt;a href="https://twitter.com/javaatmicrosoft"&gt;&lt;code&gt;@JavaAtMicrosoft&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Subscribe to our new YouTube channel ? &lt;a href="https://www.youtube.com/c/JavaonAzure"&gt;Microsoft for Java Developers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Bookmark our blog ? &lt;a href="https://devblogs.microsoft.com/java/"&gt;Microsoft Java for Developers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
