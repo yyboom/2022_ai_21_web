@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 </select> -->
 	<!-- 사용자의 cart정보를 가져와라 -->
 	<select id="cartall" parameterType="String" resultType="CartDTO">
-		SELECT ca.id, ca.user_id, c.name AS user_name,ca.item_id, i.name AS item_name, i.price AS item_price, ca.cnt, i.price*ca.cnt AS total_price, ca.rdate FROM cart ca
+		SELECT ca.id, c.name AS user_name,ca.item_id, i.name AS item_name, i.price AS item_price, ca.cnt, i.price*ca.cnt AS total_price, ca.rdate FROM cart ca
 		INNER JOIN cust c ON ca.user_id=c.id
 		INNER JOIN item i ON ca.item_id=i.id
 		<!-- parameter type이 고려되는 부분 -->

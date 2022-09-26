@@ -1,0 +1,37 @@
+<script>
+$(document).ready(function(){
+	$('#login_form > button').click(function(){
+		//JASON방식으로 attr을 불러옴
+		$('#login_form').attr({
+			//서버프로그램에 전송할 부분
+			'action':'/loginimpl',
+			'method':'post'
+		});
+		$('#login_form').submit();
+	});
+});
+
+</script>
+
+
+<div class="container">
+ <div class="col-sm-5">
+  <h2>Login</h2>
+  <form id="login_form">
+    <div class="form-group">
+    	<!-- for은 바로 밑줄의 id를 의미함! -->
+      <label for="id">ID:</label>
+      <!-- name은 서버에 전송될때 사용되는 변수! -->
+      <input type="text" class="form-control" id="id" placeholder="Enter ID" name="id">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button class="btn btn-default">LOGIN</button>
+  </form>
+</div>
+</div>
