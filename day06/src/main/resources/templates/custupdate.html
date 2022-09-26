@@ -1,21 +1,21 @@
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <script>
-$(document).read(function(){
-	//id¸¦ ¹Ù²Ù°í update¹öÆ°À» Å¬¸¯ÇßÀ» ¶§
+$(document).ready(function(){
+	//idë¥¼ ë°”ê¾¸ê³  updateë²„íŠ¼ì„ í´ë¦­í–ˆì„ ë•Œ
 	$('#updatebtn').click(function(){
-		//¼öÁ¤ÇÒ °ÍÀÎÁö ¸ÕÀú confirm
-		var c = confirm('¼öÁ¤ ÇÏ½Ã°Ú½À´Ï°¡ ?')
+		//ìˆ˜ì •í•  ê²ƒì¸ì§€ ë¨¼ì € confirm
+		var c = confirm('ìˆ˜ì • í•˜ì‹œê² ìŠµë‹ˆê¹Œ ?');
 		if(c== true){
-			//ÀÌ¶§¸¸ attribute settingÀ» ÇÏ°í
+			//ì´ë•Œë§Œ attribute settingì„ í•˜ê³ 
 			$('#update_form').attr({
-				//form»çÀÌ¿¡ ÀÖ´Â °ÍÀÌ postÀÇ ÇüÅÂ·Î updateimplºÎºĞÀÇ ¼­¹ö·Î º¸³»Áü
+				//formì‚¬ì´ì— ìˆëŠ” ê²ƒì´ postì˜ í˜•íƒœë¡œ updateimplë¶€ë¶„ì˜ ì„œë²„ë¡œ ë³´ë‚´ì§
 				'method':'post',
-				'action':'custupdateimpl'
+				'action':'/custupdateimpl'
 			});
-			//º¸³½´Ù.
+			//ë³´ë‚¸ë‹¤.
 			$('#update_form').submit();
 		}else{
-			return
+			return;
 		}
 	});
 });
@@ -26,4 +26,4 @@ $(document).read(function(){
 	PWD:<input type="text" name="pwd" th:value="${custupdate.pwd}"><br>
 	NAME:<input type="text" name="name" th:value="${custupdate.name}"><br>
 </form>
-<h4><a href="#" id="updatebtn">UPDATE</a></h4>
+<h4><a href="#" id="updatebtn">Submit</a></h4>

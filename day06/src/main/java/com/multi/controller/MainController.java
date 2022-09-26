@@ -1,5 +1,7 @@
 package com.multi.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +10,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.multi.dto.CustDTO;
+import com.multi.dto.ItemDTO;
 import com.multi.service.CustService;
+import com.multi.service.ItemService;
 
 @Controller
 public class MainController {
 	@Autowired
 	CustService cust_service;
+	
+	@Autowired
+	ItemService item_service;
+	
 	//모든 부분을 따로 controller를 만들어서 관리함!
 	@RequestMapping("/")
 	public String main() {
@@ -21,18 +29,30 @@ public class MainController {
 	}
 	
 	//item
-		@RequestMapping("/item")
-		public String item(Model model) {
+	@RequestMapping("/item")
+	public String item(Model model) {
+		//select해올 item을 넣어야함!
+		List<ItemDTO> list =null;
+		try {
+			//item들을 list안에 넣어줌!
+			list=item_service.get();
+			//item들을 itemlist에 담음!
+			model.addAttribute("itemlist", list);
+			//page는 item page가 center로 오게!
 			model.addAttribute("center", "item");
-			return "main";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return "main";
+	}
 		
 	//item
-		@RequestMapping("/cart")
-		public String cart(Model model) {
-			model.addAttribute("center", "cart");
-			return "main";
-		}
+	@RequestMapping("/cart")
+	public String cart(Model model) {
+	model.addAttribute("center", "cart");
+		return "main";
+	}
 	
 	//login
 	@RequestMapping("/login")
