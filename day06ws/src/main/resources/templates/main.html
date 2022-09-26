@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- 타임리프를 넣어줌으로써 다이나믹한 웹을 만들 수 있음 -->
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <!-- 모바일, 피씨, 태블릿을 사용할 수 있는 것 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- 이미 jquery가 설치 되어 있음 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<!-- chart 라이브러리 -->
+  	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<!-- map -->
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b67794657ed6e950ec05402c7a55d07f"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">HOME</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      	<!-- 각각을 요청했을 때 어떻게 서버(maincontroller)에 요청할 것인지 -->
+        <li><a href="/item">Item</a></li>
+        <!-- login을 했는지 안했는지 확인한 후 null이 아닐때만 cart를 보여지게 함! -->
+        <li th:if="${session.logincust != null}">
+        	<a href="/cart">Cart</a>
+        </li>
+      </ul>
+      <!-- session에 로그인 아이디가 없으면 첫번째 ul-->
+      <ul th:if="${session.logincust == null}" class="nav navbar-nav navbar-right">
+      	<!-- login, register부분을 따로 만들어둠! 로그인을 하기 전(왼쪽 위 상단 부분)-->
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+        <li><a href="/register"><span class="glyphicon glyphicon-new-window"></span>&nbsp; Register</a></li>
+      </ul>
+      <!-- session에 로그인 아이디가 있으면 두번째 ul-->
+      <ul th:if="${session.logincust != null}" class="nav navbar-nav navbar-right">
+      	<!-- login, register부분을 따로 만들어둠! 로그인을 한 후(왼쪽 위 상단 부분)-->
+      	<!-- login할 아이디를 넣어줌 -->
+      	<!-- login버튼을 login후 id로 바꾸고 이것을 누르면 다른 페이지로 이동할 수 있게 주소를 바꿔줌-->
+      	<!-- custdetail page로 이동! -->
+        <li><a th:href="@{/custdetail(id=${session.logincust.id})}" th:text="${session.logincust.id}"></a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+  	<!-- 왼쪽메뉴 -->
+  	<!-- left가 있으면 left를 뿌리고(그대로) 없으면 mainleft! -->
+    <div class="col-sm-2 sidenav" th:insert="${left} ? ${left} : mainleft">
+    </div>
+    <!-- centerpage -->
+    <!-- center가 있으면 center를 뿌리고(그대로) 없으면 maincenter! -->
+    <div class="col-sm-8 text-left" th:insert="${center} ? ${center} : maincenter"> 
+    
+    </div>
+    <!-- 오른쪽 메뉴 -->
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>

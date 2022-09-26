@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 어디를 통해서 들어오는지! -->
+<mapper namespace="com.multi.mapper.CartMapper">
+	<!-- select를 부르면 argument로 Integer형태로 들어올 것이고 sql의 결과를 itemDTO로 보내겠다. -->
+	<!-- 특정 카트 번호에 있는 것을 불러와라 -->
+	<select id="select" parameterType="Integer" resultType="CartDTO">
+		<!-- 가져올 때 column명을 다르게 해서 가져와야함!!! -->
+		<!-- 상세조회 -->
+		SELECT ca.id,ca.user_id,i.name AS item_name, i.price AS item_price, ca.cnt, i.imgname AS item_imgname, ca.rdate 
+		FROM cart ca
+		INNER JOIN item i ON ca.item_id = i.id
+		WHERE ca.id = #{id}
+	</select>
+	<!-- <select id="selectall" resultType="CartDTO">
+		SELECT ca.id, ca.user_id, c.name AS cust_name,ca.item_id, i.name AS item_name, i.price, ca.cnt, i.price*ca.cnt AS total_price, ca.rdate FROM cart ca
+		INNER JOIN cust c ON c.id=ca.user_id
+		INNER JOIN item i ON i.id=ca.item_id
+</select> -->
+	<!-- 사용자의 cart정보를 가져와라 -->
+	<select id="cartall" parameterType="String" resultType="CartDTO">
+		SELECT ca.id, c.name AS user_name,ca.item_id, i.name AS item_name, i.price AS item_price, ca.cnt, i.price*ca.cnt AS total_price, ca.rdate FROM cart ca
+		INNER JOIN cust c ON ca.user_id=c.id
+		INNER JOIN item i ON ca.item_id=i.id
+		<!-- parameter type이 고려되는 부분 -->
+		WHERE ca.user_id=#{user_id}
+	</select>
+	<!-- id,pwd를 끄집어낼 때는 get,set으로 입력받고 나오게 될것 -->
+	<!-- id는 자동증가이므로 sql과 맞게 null,sysdate로! -->
+	<insert id="insert" parameterType="CartDTO">
+		INSERT INTO cart VALUES (NULL,#{user_id},#{item_id},#{cnt},SYSDATE())
+	</insert>
+	<!-- date는 수정 불가 -->
+	<!-- id를 기준으로 item_id, cnt를 수정할 수 있다. -->
+	<update id="update" parameterType="CartDTO">
+		UPDATE cart SET item_id=#{item_id}, cnt=#{cnt} WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM cart WHERE id=#{id}
+	</delete>
+	
+</mapper>

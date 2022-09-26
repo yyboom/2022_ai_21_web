@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.multi.vo.CustVo"/>
     <fullyQualifiedTypeName name="com.multi.test.A"/>
@@ -25,11 +24,8 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="com.multi.frame.MyService"/>
-    <fullyQualifiedTypeName name="com.multi.dto.CustDTO"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.multi.mapper.CustMapper"/>
-    <fullyQualifiedTypeName name="com.multi.service.CustService"/>
     <fullyQualifiedTypeName name="com.multi.mapper.ItemMapper"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="com.multi.service.ItemService"/>
@@ -39,4 +35,8 @@
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.multi.service.CartService"/>
     <fullyQualifiedTypeName name="com.multi.dto.CartDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
+    <fullyQualifiedTypeName name="com.multi.service.CustService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.multi.dto.CustDTO"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,9 @@
+<meta charset="EUC-KR">
+<h3>Cust Detail Page</h3>
+<!-- custdetail안에 있는 cust의 if,pwd,name을 꺼내라 -->
+<h4 th:text="${custdetail.id}"></h4>
+<h4 th:text="${custdetail.pwd}"></h4>
+<h4 th:text="${custdetail.name}"></h4>
+<!-- 회원 정보를 수정하기 위해서 cust update page로 가라 -->
+<!-- 이때 바뀔 페이지의 주소를 아래와 같이 바꿔라 -->
+<h5><a th:href="@{/custupdate(id=${custdetail.id})}">UPDATE</a></h5>
