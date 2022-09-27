@@ -70,7 +70,8 @@
         <li><a href="/item">Item</a></li>
         <!-- login을 했는지 안했는지 확인한 후 null이 아닐때만 cart를 보여지게 함! -->
         <li th:if="${session.logincust != null}">
-        	<a href="/cart">Cart</a>
+         	<!-- session에서 id를 가져와야함!  -->
+        	<a th:href="@{/cart(id=${session.logincust.id})}">Cart</a>
         </li>
       </ul>
       <!-- session에 로그인 아이디가 없으면 첫번째 ul-->

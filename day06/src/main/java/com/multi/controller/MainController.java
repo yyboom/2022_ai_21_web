@@ -2,6 +2,7 @@ package com.multi.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.multi.dto.CartDTO;
 import com.multi.dto.CustDTO;
 import com.multi.dto.ItemDTO;
+import com.multi.service.CartService;
 import com.multi.service.CustService;
 import com.multi.service.ItemService;
 
@@ -22,9 +25,32 @@ public class MainController {
 	@Autowired
 	ItemService item_service;
 	
+	@Autowired
+	CartService cart_service;
+	
 	//모든 부분을 따로 controller를 만들어서 관리함!
 	@RequestMapping("/")
 	public String main() {
+		return "main";
+	}
+	
+	//itemdetail
+	@RequestMapping("/itemdetail")
+	public String itemdetail(Model model, int id) {
+		//select해올 item을 넣어야함!
+		ItemDTO item = null;
+		try {
+			//id값을 가지고 있는 id정보들을 불러옴
+			item=item_service.get(id);
+			//밑의 두개 itemdetail은 다른 것임!!!같은 애들 아님!!
+			//item들을 itemdetail에 넣어줌
+			model.addAttribute("itemdetail", item);
+			//page는 item detail page가 center로 오게!
+			model.addAttribute("center", "itemdetail");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "main";
 	}
 	
@@ -47,11 +73,36 @@ public class MainController {
 		return "main";
 	}
 		
-	//item
+	//cart
 	@RequestMapping("/cart")
-	public String cart(Model model) {
-	model.addAttribute("center", "cart");
+	public String cart(Model model, String id) {
+		//select해올 cart을 넣어야함!
+		List<CartDTO> list =null;
+		try {
+			//item들을 list안에 넣어줌!
+			list=cart_service.cartall(id);
+			//item들을 itemlist에 담음!
+			model.addAttribute("cartlist", list);
+			//page는 item page가 center로 오게!
+			model.addAttribute("center", "cart");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "main";
+	}
+	
+	//deletecart
+	@RequestMapping("/deletecart")
+	//session을 이용해서 지워줄 수도 있음
+	public String cart(Model model, int id, String user_id) {
+		try {
+			cart_service.remove(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return  "redirect:cart?id="+user_id;
 	}
 	
 	//login

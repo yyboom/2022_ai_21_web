@@ -1,10 +1,10 @@
 <meta charset="utf-8">
 <h3>Item Detail Page</h3>
 <!-- custdetail안에 있는 cust의 if,pwd,name을 꺼내라 -->
+<img th:src="'/img/'+${itemdetail.imgname}">
 <h4 th:text="${itemdetail.id}"></h4>
 <h4 th:text="${itemdetail.name}"></h4>
 <h4 th:text="${itemdetail.price}"></h4>
-<h4 th:text="${itemdetail.imgname}"></h4>
 <h4 th:text="${itemdetail.rdate}"></h4>
 
 <!-- login이 되어있을 때 보이는 버튼이고 로그인이 되어있을 시 장바구니로 보냄 -->

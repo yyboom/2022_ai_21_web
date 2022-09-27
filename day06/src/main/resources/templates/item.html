@@ -23,7 +23,11 @@
     <tbody>
     	<!-- 우리가 itemlist에다가 item들을 넣어주었음! 다시 걔를 it로 지정함! -->
       <tr th:each="it:${itemlist}">
-        <td><img th:src="'/img/'+${it.imgname}"></td>
+        <td>
+        	<a th:href="@{/itemdetail(id=${it.id})}">
+        		<img th:src="'/img/'+${it.imgname}">
+        	</a>
+       </td>
         <td th:text="${it.id}">no</td>
         <td th:text="${it.name}">name</td>
         <td th:text="${it.price}">price</td>

@@ -1,0 +1,100 @@
+<meta charset="utf-8">
+<script>
+$(document).ready(function(){
+	//각각의 버튼에 이벤트를 붙임
+	//up
+	$('#up_btn').click(function(){
+		//num을 불러오고
+		var num = $('#num').val();
+		//num에 +1해주고 다시 field에 넣어줌(이때 정수로 바꿔서 넣어즘!)
+		var result = Number(num) +1;
+		//다시 출력
+		$('#num').val(result);
+	});
+	//down
+	$('#down_btn').click(function(){
+		//num을 불러오고
+		var num = $('#num').val();
+		//이때 0이 되면 더이상 내려가지 못하도록!
+		if(num=='0'){
+			return;
+		}
+		//num에 -1해주고 다시 field에 넣어줌(이때 정수로 바꿔서 넣어즘!)
+		var result = Number(num) -1;
+		//다시 출력
+		$('#num').val(result);	
+	});
+	//cart
+	$('#cart_btn').click(function(){
+		//custid, itemid, cnt만 서버로 전송해 주면 됨!(ajax로 먼저 전송!)
+		//어떤 이벤트가 일어났을때 그 화면에서 뭔가를 처리하고 싶다면 ajax를 사용하는 것!
+		var item_id = $('#item_id').text();
+		var item_cnt=$('#num').val();
+		//cust_id값은 현재 session안에 들어가 있음
+		//javascript에서 tymleaf code 불러오는 방법!
+		var cust_id='[[${session.logincust.id}]]';
+
+		if(item_cnt == '0'){
+			alert('수량을 입력 하세요.');
+			return;
+		}
+		//ajax
+		$.ajax({
+			//addcart에다가 위의 정보를 전송함!!(Acontroller로!)
+			url:'/addcart',
+			//cartdto에 있는 것과 맞춰줘야함!
+			data:{'user_id':cust_id,'item_id':item_id,'cnt':item_cnt},
+			success:function(data){
+				//modal button을 open하라
+				$('#myModal').modal();
+			}
+		});
+	});
+});
+</script>
+
+<h3>Item Detail Page</h3>
+<img th:src="'/img/'+${itemdetail.imgname}">
+<h4 id="item_id" th:text="${itemdetail.id}"></h4>
+<h4 th:text="${itemdetail.name}"></h4>
+<h4 th:text="${itemdetail.price}"></h4>
+<!-- 카페에 타임리프 기본문법에 올라와 있음 -->
+<h4 th:text="'Item Rdate:'+${#dates.format(itemdetail.rdate, 'yyyy-MM-dd')}"></h4>
+
+<div class="container col-sm-4" th:if="${session.logincust != null}">
+	<!-- 사려는 item의 개수를 고를 수 있는 것! -->
+	<!-- 마음대로 타이핑을 하지 못라도록 readonly를 걸어놈, 0부터 시작 -->
+	<input type="number" value="0" class="form-control" id="num" readonly="readonly">
+	 <!-- button up -->
+	<button type="button" class="btn btn-default btn-sm" id="up_btn">
+          <span class="glyphicon glyphicon-arrow-up"></span> Up
+    </button>
+     <!-- button down -->
+    <button type="button" class="btn btn-default btn-sm" id="down_btn">
+          <span class="glyphicon glyphicon-arrow-down"></span> Down
+    </button>
+    <!-- shopping cart button -->
+    <button type="button" class="btn btn-default btn-sm" id="cart_btn">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+    </button> 
+</div>
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+    	<div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">카트에 담았습니다.</h4>
+        </div>
+        <div class="modal-body">
+          <p><a th:href="@{/cart(id=${session.logincust.id})}">장바구니로 이동하시겠습니까?</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

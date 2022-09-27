@@ -28,15 +28,15 @@
     <fullyQualifiedTypeName name="com.multi.mapper.CustMapper"/>
     <fullyQualifiedTypeName name="com.multi.mapper.ItemMapper"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="com.multi.service.ItemService"/>
-    <fullyQualifiedTypeName name="com.multi.dto.ItemDTO"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="com.multi.mapper.CartMapper"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="com.multi.service.CartService"/>
-    <fullyQualifiedTypeName name="com.multi.dto.CartDTO"/>
     <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
     <fullyQualifiedTypeName name="com.multi.service.CustService"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.multi.dto.CustDTO"/>
+    <fullyQualifiedTypeName name="com.multi.service.ItemService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.multi.dto.ItemDTO"/>
+    <fullyQualifiedTypeName name="com.multi.dto.CartDTO"/>
+    <fullyQualifiedTypeName name="com.multi.service.CartService"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 </qualifiedTypeNameHistroy>
