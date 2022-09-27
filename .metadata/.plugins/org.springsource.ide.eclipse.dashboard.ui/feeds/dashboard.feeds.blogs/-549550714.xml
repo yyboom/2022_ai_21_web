@@ -5,7 +5,7 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2022-09-26T11:33:08Z</updated>
+  <updated>2022-09-26T11:33:00Z</updated>
   <entry>
     <title>Native Support in Spring Boot 3.0.0-M5</title>
     <link rel="alternate" href="https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5" />
@@ -14,7 +14,7 @@
       <name>St?phane Nicoll</name>
     </author>
     <id>tag:spring.io,2022-09-23:4928</id>
-    <updated>2022-09-26T11:33:08Z</updated>
+    <updated>2022-09-26T11:33:00Z</updated>
     <content type="html">&lt;p&gt;The Spring Team has been working on native image support for Spring Applications for quite some time. After 3+ years of incubation in the &lt;a href="https://github.com/spring-projects-experimental/spring-native"&gt;Spring Native&lt;/a&gt; experimental project with Spring Boot 2, native support is moving to General Availability with Spring Framework 6 and Spring Boot 3!&lt;/p&gt;
 &lt;p&gt;Native images provide almost instant startup time and reduced memory consumption for Java applications. The recent Spring Boot &lt;code&gt;3.0.0-M5&lt;/code&gt; release marks the first time we¡¯re asking for broader community feedback on our native story. If you need to catch-up on the basics, please refer to the &lt;a href="https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3"&gt;Ahead Of Time basics blog post&lt;/a&gt; from late March. You can also learn &lt;a href="https://spring.io/blog/2022/05/24/preparing-for-spring-boot-3-0"&gt;how to prepare your applications for Spring Boot 3.0&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;A lot has happened since March! We¡¯ve improved compatibility with a larger number of use cases and libraries, fixing and improving our native support in the process. This blog post details what you need to know to get started.&lt;/p&gt;&lt;h1&gt;&lt;a href="#building-your-first-native-image" class="anchor" name="building-your-first-native-image"&gt;&lt;/a&gt;Building Your First Native Image&lt;/h1&gt;
@@ -32,7 +32,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once that¡¯s done, this triggers the necessary infrastructure to build the native image:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;$ /.gradlew nativeCompile
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ./gradlew nativeCompile
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This generates a native binary for your local OS/CPU located in &lt;code&gt;target/&lt;/code&gt; and &lt;code&gt;build/native/nativeCompile&lt;/code&gt; respectively. You can start your app like with any other binary. For instance with Maven:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint"&gt;$ target/demo
@@ -50,7 +50,7 @@
 &lt;pre&gt;&lt;code class="prettyprint"&gt;$ ./mvnw -PnativeTest test
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;With Gradle, the command is as follows:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;$ /.gradlew nativeTest
+&lt;pre&gt;&lt;code class="prettyprint"&gt;$ ./gradlew nativeTest
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For tests that are using an ApplicationContext, this applies the same process of optimizing it and inferring the necessary reachability metadata.&lt;/p&gt;&lt;h1&gt;&lt;a href="#your-application-does-not-work-now-what" class="anchor" name="your-application-does-not-work-now-what"&gt;&lt;/a&gt;Your Application Does Not Work: Now What?&lt;/h1&gt;
 &lt;p&gt;If your application does not work as a native image, we¡¯d love to hear about it and improve our support before the release candidate, scheduled in late October. Support varies depending on the error:&lt;/p&gt;

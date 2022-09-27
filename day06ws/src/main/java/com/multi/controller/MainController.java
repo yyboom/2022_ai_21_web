@@ -52,9 +52,28 @@ public class MainController {
 	
 	//cart
 	@RequestMapping("/cart")
-	public String cart(Model model) {
-		model.addAttribute("center", "cart");
+	public String cart(Model model, String id) {
+		List<CartDTO> cart = null;
+		try {
+			cart = cart_service.cartall(id);
+			model.addAttribute("cartlist", cart);
+			model.addAttribute("center", "cart");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return "main";
+	}
+	//deletecart
+	@RequestMapping("/deletecart")
+	public String deletecart(Model model, int id, String user_id) {
+		try {
+			cart_service.remove(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:cart?id="+user_id;
 	}
 	
 	//login
@@ -197,23 +216,6 @@ public class MainController {
 
 		return "main";
 	}
-	//cartinsert
-	@RequestMapping("/cartinsert")
-	//model에다가 값을 담아서 register ok, register fail page로 보내줌
-	public String cartinsert(Model model, CartDTO cart) {
-			
-			try {
-				cart_service.register(cart);
-				System.out.println(cart);
-				model.addAttribute("cartitem", cart);
-				model.addAttribute("center", "cart");
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
 
-		return "main";
-	}
 
 }

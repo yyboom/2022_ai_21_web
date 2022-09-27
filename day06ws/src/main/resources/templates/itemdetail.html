@@ -1,13 +1,101 @@
 <meta charset="utf-8">
+<script>
+$(document).ready(function(){
+	//버튼 이벤트
+	//up
+	$('#up_btn').click(function(){
+		//input창의 num을 증가시켜야함!
+		//num을 불러옴
+		var num = $('#num').val();
+		//덧셈이 안됨. String으로 배포되기 때문 이를 number타입으로 변환시켜줘야함
+		var result = Number(num) + 1;
+		//result를 다시 num에 넣어준다.
+		$('#num').val(result);
+	});
+	//down
+	$('#down_btn').click(function(){
+		//input창의 num을 감소시켜야함!
+		//num을 불러옴
+		var num = $('#num').val();
+		//0이 되었을때는 더이상 감소가 안되게!
+		if(num=='0'){
+			//중단시켜라
+			return;
+		}
+		//덧셈이 안됨. String으로 배포되기 때문 이를 number타입으로 변환시켜줘야함
+		var result = Number(num) - 1;
+		//result를 다시 num에 넣어준다.
+		$('#num').val(result);
+	});
+	//addcart
+	$('#cart_btn').click(function(){
+		var item_id= $('#item_id').text();
+		var item_cnt=$('#num').val();
+		//tymleaf로 되어있는거 불러올때 주의해야함!
+		var cust_id='[[${session.logincust.id}]]';
+		
+		//cnt가 0이면 안됨
+		if(item_cnt == '0'){
+			alert('수량을 입력 하세요.');
+			return;
+		}
+		
+		//위에서 불러온 애들을 뿌려줘야함!
+		//이때 화면이 전환되면 안되고 거기서 바로 발생해야함 => ajax로 뿌려줘야함
+		$.ajax({
+			url:'/addcart',
+			data:{'user_id':cust_id, 'item_id':item_id, 'cnt':item_cnt},
+			success:function(data){
+				$('#myModal').modal();
+			}
+		});
+		
+	});
+	
+});
+</script>
 <h3>Item Detail Page</h3>
 <!-- custdetail안에 있는 cust의 if,pwd,name을 꺼내라 -->
 <img th:src="'/img/'+${itemdetail.imgname}">
-<h4 th:text="${itemdetail.id}"></h4>
+<h4 id="item_id" th:text="${itemdetail.id}"></h4>
 <h4 th:text="${itemdetail.name}"></h4>
 <h4 th:text="${itemdetail.price}"></h4>
-<h4 th:text="${itemdetail.rdate}"></h4>
+<!-- date를 뽑아내는 형식 -->
+<h4 th:text="${#dates.format(itemdetail.rdate, 'yyyy-MM-dd')}"></h4>
 
-<!-- login이 되어있을 때 보이는 버튼이고 로그인이 되어있을 시 장바구니로 보냄 -->
-<h5 th:if="${session.logincust != null}">
-	<a th:href="@{/cartinsert(id=${itemdetail.id})}">ADD ITEM TO CART</a>
-</h5>
+<div class="container col-sm-4" th:if="${session.logincust != null}">
+	<!-- button을 눌렀을 때 보여줄 개수 창 -->
+	<!-- 마음대로 타이핑을 하지 못라도록 readonly를 걸어놈, 0부터 시작 -->
+	<input type="number" value="0" class="form-control" id="num" readonly="readonly">
+	<!-- item을 하나 더할 때 -->
+	<button type="button" class="btn btn-default btn-sm" id="up_btn">
+         <span class="glyphicon glyphicon-plus"></span> Plus
+    </button>
+    <!-- item을 하나 뺄 때 -->
+    <button type="button" class="btn btn-default btn-sm" id="down_btn">
+         <span class="glyphicon glyphicon-minus"></span> Minus
+    </button>
+    <!-- shopping cart button -->
+    <button type="button" class="btn btn-default btn-sm" id="cart_btn">
+          <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+    </button> 
+</div>
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+    	<div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">카트에 담았습니다.</h4>
+        </div>
+        <div class="modal-body">
+          <p><a th:href="@{/cart(id=${session.logincust.id})}">장바구니로 이동하시겠습니까?</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+      </div>

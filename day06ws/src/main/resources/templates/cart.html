@@ -1,2 +1,67 @@
 <meta charset="utf-8">
-<h1>Cart</h1>
+<style>
+	table > tbody > tr > td > img {
+		width:100px;
+	} 
+	table > tbody > tr > td > img:hover {
+		width:99px;
+		border:1px solid red;
+	} 
+</style>
+<script>
+function del(id){
+	var user_id = '[[${session.logincust.id}]]';
+	var c = confirm('삭제 하시겠습니까 ?');
+	if(c == true){
+		//이부분 다른 방법으로도 해보기
+		location.href='/deletecart?id='+id+'&user_id='+user_id;
+	}
+}
+
+</script>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Cart_id</th>
+      	<th>Cust_id</th>
+        
+        <th>Item_id</th>
+        <th>Item_name</th>
+        <th>Item_price</th>
+        <th>Cnt</th>
+        <th>Total_price</th>
+        <th>Rdate</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr th:each="ca:${cartlist}">
+      	<!-- dto변수들이랑 똑같이 써야함! -->
+        <td id="cid" th:text="${ca.id}">no</td>
+        <td th:text="${ca.user_id}">user_id</td>
+        
+        <td th:text="${ca.item_id}">item_id</td>
+        <td th:text="${ca.item_name}">item_name</td>
+        <td th:text="${ca.item_price}">item_price</td>
+        <td th:text="${ca.cnt}">cnt</td>
+        <td th:text="${ca.total_price}">total_price</td>
+        <td th:text="${#dates.format(ca.rdate, 'yyyy-MM-dd')}">rdate</td>
+        <td><img th:src="'/img/'+${ca.item_imgname}"></td>
+        <td>
+        	<!-- id로 쓰면 button이 하나의 아이디로 묶여있기 때문에 cart에는 다지워진것처럼 나오게됨!! -->
+        	<!-- conlick을 써야함! -->
+        	<!--delete버튼을 누를때마다 매번 값을 넣어주는 것임!! -->
+        	<button  th:onclick = "del([[${ca.id}]])" type="button" class="btn btn-default btn-sm">
+          		<span class="glyphicon glyphicon-trash"></span> Delete
+        	</button>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+    
