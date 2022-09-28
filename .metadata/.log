@@ -9751,3 +9751,55 @@ Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotati
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-09-28 16:21:35.180
 !MESSAGE [Error]	No config file for c:\web\Day1\admintest\src\main\resources\templates\tables.html
+!SESSION 2022-09-28 17:48:44.894 -----------------------------------------------
+eclipse.buildId=4.18.0.I20201202-1800
+java.version=15.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2022-09-28 17:48:52.779
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2022-09-28 17:48:52.779
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1368ed98,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1400984b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-09-28 17:48:59.191
+!MESSAGE [Info]	Using typescript/lib/tsserverlibrary v4.0.5 from C:\eclipse\eclipse\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\typescript\lib\tsserverlibrary.js
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-09-28 17:48:59.192
+!MESSAGE [Info]	Log file: undefined
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-09-28 17:48:59.193
+!MESSAGE [Info]	Using @angular/language-service v10.2.2 from C:\eclipse\eclipse\plugins\org.eclipse.wildwebdeveloper_0.5.13.202012011111\node_modules\@angular\language-service\bundles\language-service.js
+
+!ENTRY org.eclipse.lsp4e 1 0 2022-09-28 17:48:59.194
+!MESSAGE [Info]	Angular language server process ID: 6356
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-28 17:49:06.747
+!MESSAGE [Error]	No config file for c:\web\Day1\admintest\src\main\resources\templates\index.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-28 17:49:07.340
+!MESSAGE [Error]	No config file for c:\web\Day1\admintest\src\main\resources\templates\cust\detail.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-28 17:49:19.415
+!MESSAGE [Error]	No config file for c:\web\Day1\day02\target\classes\templates\css09.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-28 17:49:39.229
+!MESSAGE [Error]	No config file for c:\web\Day1\admintest\src\main\resources\templates\tables.html

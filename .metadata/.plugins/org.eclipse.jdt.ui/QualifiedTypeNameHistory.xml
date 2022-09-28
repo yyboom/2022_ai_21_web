@@ -40,4 +40,8 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.multi.dto.CustDTO"/>
+    <fullyQualifiedTypeName name="com.multi.mapper.admMapper"/>
+    <fullyQualifiedTypeName name="com.multi.dto.admDTO"/>
+    <fullyQualifiedTypeName name="com.multi.service.AdmService"/>
+    <fullyQualifiedTypeName name="com.multi.dto.AdmDTO"/>
 </qualifiedTypeNameHistroy>
