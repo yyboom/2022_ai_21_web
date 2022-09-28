@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<script>
+$(document).ready(function(){
+	$('#register_btn').click(function(){
+		$('#cust_form').attr({
+			'method':'post',
+			'action':'/cust/registerimpl'
+		});
+		$('#cust_form').submit();
+	});
+});
+</script>
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800">Register Customer</h1>
+</div>
+<!-- register Area -->
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Customer
+			Register</h6>
+	</div>
+	<div class="card-body">
+		<form id="cust_form">
+			<div class="form-group">
+				<!-- for은 바로 밑줄의 id를 의미함! -->
+				<label for="id">ID:</label>
+				<!-- name은 서버에 전송될때 사용되는 변수! -->
+				<input type="text" class="form-control" id="id" placeholder="Enter ID"
+					name="id"> <span id="ispan"></span>
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label> <input placeholder="Enter password"
+					class="form-control" id="pwd" name="pwd">
+			</div>
+			<div class="form-group">
+				<label for="name">NAME:</label>
+				<!-- name은 서버 전송시 쓰일 변수임 -->
+				<input type="text" class="form-control" id="name"
+					placeholder="Enter NAME" name="name">
+			</div>
+			<button id="register_btn"class="btn btn-default">REGISTER</button>
+		</form>
+	</div>
+</div>
+<!-- 필요하면 이밑에 content row를 넣으면 됨! -->
