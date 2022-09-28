@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 어디를 통해서 들어오는지! -->
+<mapper namespace="com.multi.mapper.AdmMapper">
+	<!-- select를 부르면 argument로 String형태로 들어올 것이고 sql의 결과를 custDTO로 보내겠다. -->
+	<select id="select" parameterType="String" resultType="AdmDTO">
+		SELECT * FROM adm WHERE id=#{id}
+	</select>
+	<select id="selectall" resultType="AdmDTO">
+		SELECT * FROM adm
+	</select>
+	<!-- id,pwd를 끄집어낼 때는 get,set으로 입력받고 나오게 될것 -->
+	<insert id="insert" parameterType="AdmDTO">
+		INSERT INTO adm VALUES (#{id},#{pwd},#{lev})
+	</insert>
+	<update id="update" parameterType="AdmDTO">
+		UPDATE adm SET pwd=#{pwd},lev=#{lev} WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM adm WHERE id=#{id}
+	</delete>
+	
+</mapper>

@@ -3,18 +3,18 @@
 //update
 $(document).ready(function(){
 	$('#update_btn').click(function(){
-		$('#cust_form').attr({
+		$('#admin_form').attr({
 			'method':'post',
-			'action':'/cust/update'
+			'action':'/adm/update'
 		});
-		$('#cust_form').submit();
+		$('#admin_form').submit();
 	});
 });
 //delete
 function del(id){
 	var c =confirm('삭제하시겠습니까?');
 	if(c==true){
-		location.href='/cust/delete?id='+id;
+		location.href='/adm/delete?id='+id;
 	}
 }
 </script>
@@ -22,36 +22,36 @@ function del(id){
 <!-- 특정 사용자의 detail을 알려주는 화면 -->
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-	<h1 class="h3 mb-0 text-gray-800">Detail Customer</h1>
+	<h1 class="h3 mb-0 text-gray-800">Detail Administer</h1>
 </div>
 <!-- Detail Area -->
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		<h6 class="m-0 font-weight-bold text-primary">Customer
+		<h6 class="m-0 font-weight-bold text-primary">Administer
 			Information</h6>
 	</div>
 	<div class="card-body">
-		<form id="cust_form">
+		<form id="admin_form">
 			<div class="form-group">
 				<!-- for은 바로 밑줄의 id를 의미함! -->
 				<label for="id">ID:</label>
 				<!-- name은 서버에 전송될때 사용되는 변수! -->
-				<input type="text" class="form-control" id="id" th:value="${c.id}"
+				<input type="text" class="form-control" id="id" th:value="${a.id}"
 					name="id" readonly="readonly"> <span id="ispan"></span>
 			</div>
 			<div class="form-group">
 				<label for="pwd">Password:</label> <input type="password"
-					class="form-control" id="pwd" th:value="${c.pwd}" name="pwd">
+					class="form-control" id="pwd" th:value="${a.pwd}" name="pwd">
 			</div>
 			<div class="form-group">
-				<label for="name">NAME:</label>
+				<label for="lev">LEVEL:</label>
 				<!-- name은 서버 전송시 쓰일 변수임 -->
-				<input type="text" class="form-control" id="name"
-					th:value="${c.name}" name="name">
+				<input type="text" class="form-control" id="lev"
+					th:value="${a.lev}" name="lev">
 			</div>
 		</form>
 			<button id="update_btn"class="btn btn-default">UPDATE</button>
-			<button th:onclick = "del([[${c.id}]])" id="delete_btn" class="btn btn-default">DELETE</button>
+			<button th:onclick = "del([[${a.id}]])" id="delete_btn" class="btn btn-default">DELETE</button>
 	</div>
 </div>
 <!-- 필요하면 이밑에 content row를 넣으면 됨! -->
