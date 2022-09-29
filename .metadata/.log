@@ -10704,3 +10704,6 @@ Caused by: java.lang.NoSuchMethodException: org.springframework.context.annotati
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-09-29 16:44:25.615
 !MESSAGE [Error]	No config file for c:\web\Day1\admintest\src\main\resources\templates\tables.html
+
+!ENTRY org.eclipse.lsp4e 4 0 2022-09-29 17:08:42.939
+!MESSAGE [Error]	No config file for c:\web\Day1\admintest\src\main\resources\templates\tables.html

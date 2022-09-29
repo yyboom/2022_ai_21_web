@@ -28,20 +28,17 @@ public class MainController {
 		try {
 			adm=service.get(id);
 			if(adm==null) {
-				model.addAttribute("center", "loginfail");
+				model.addAttribute("center", "index");
 			}else {
 				if(pwd.equals(adm.getPwd())) {
 					session.setAttribute("loginadmin", adm);
-					model.addAttribute("center", "loginok");
-				}else {
-					model.addAttribute("center", "loginfail");
 				}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "index";
+		return "redirect:/";
 	}
 	//loginimpl->logout
 	@RequestMapping("/logout")
@@ -50,6 +47,6 @@ public class MainController {
 		if(session != null) {
 			session.invalidate();
 		}
-		return "index";
+		return "redirect:/";
 	}
 }

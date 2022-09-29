@@ -232,9 +232,10 @@ $(document).ready(function(){
 						
 
 						<li th:if="${session.loginadmin != null}" class="nav-item dropdown no-arrow"><a
-							class="nav-link dropdown-toggle" th:text="${session.loginadmin.id}" id="userDropdown"
+							class="nav-link dropdown-toggle" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
+								th:text="${session.loginadmin.id}"
 								class="mr-2 d-none d-lg-inline text-gray-600 small"></span><img class="img-profile rounded-circle"
 								src="/img/undraw_profile.svg">
 						</a> <!-- Dropdown - User Information -->
