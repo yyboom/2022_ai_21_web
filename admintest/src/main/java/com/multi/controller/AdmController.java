@@ -34,8 +34,14 @@ public class AdmController {
 		}
 		return "index";
 	}
+	//register
+	@RequestMapping("/register")
+	public String register(Model model) {
+		model.addAttribute("center", dir+"register");
+		return "index";
+	}
 	
-	//detail
+	//get->detail
 	@RequestMapping("/detail")
 	public String detail(Model model, String id) {
 		AdmDTO adm = null;
@@ -51,7 +57,7 @@ public class AdmController {
 		return "index";
 	}
 	
-	//update
+	//detail->update
 	@RequestMapping("/update")
 	public String update(Model model, AdmDTO adm) {
 		try {
@@ -63,7 +69,7 @@ public class AdmController {
 		return "redirect:detail?id="+adm.getId();
 	}
 	
-	//delete
+	//detail->delete
 	@RequestMapping("/delete")
 	public String delete(Model model, String id) {
 		try {
@@ -75,24 +81,19 @@ public class AdmController {
 		return "redirect:get";
 	}
 	
-	@RequestMapping("/register")
-	public String register(Model model) {
-		model.addAttribute("center", dir+"register");
-		return "index";
-	}
 	
-	
-	  //registerimpl
+	  //resister->registerimpl
 	  
 	  @RequestMapping("/registerimpl")
-	  public String registerimpl(Model model, AdmDTO adm) {
+	  public String registerimpl(Model model, AdmDTO adm) throws Exception {
 		  try {
 			service.register(adm);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// deuplicated문제가 발생할 때!
+			throw new Exception("ID 중복 에러");
+			//던지고 나서 밑에 return으로 가지 않음!
 		}
-		  return "redirect:get";
+		  return "redirect:detail?id="+adm.getId();
 	  }
 		 
 	 

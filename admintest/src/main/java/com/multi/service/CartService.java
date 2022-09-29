@@ -41,7 +41,7 @@ public class CartService implements MyService<Integer, CartDTO>{
 	//쓰지 않으니 null로
 	@Override
 	public List<CartDTO> get() throws Exception {
-		return null;
+		return mapper.selectall();
 	}
 	
 	public List<CartDTO> cartall(String user_id) throws Exception {

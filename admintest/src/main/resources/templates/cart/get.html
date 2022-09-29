@@ -1,11 +1,82 @@
 <meta charset="utf-8">
+<!-- img크기 -->
+<style>
+	table>tbody>tr>td>img{
+		width:100px;
+	}
+	table>tbody>tr>td>img:hover{
+		width:99px;
+		border:1px solid red;
+	}
+</style>
+<script>
+function del(id){
+	var c = confirm('삭제하시겠습니까?')
+	if(c==true){
+		//main이 아닌 cartcontroller에서 동작해야하기에 /cart/deletecart로 가야함
+		location.href='/cart/deletecart?id='+id;
+	}
+}
+</script>
 
+<!-- 관리자를 가져오는 것 -->
 <!-- Page Heading -->
-<div
-	class="d-sm-flex align-items-center justify-content-between mb-4">
-	<h1 class="h3 mb-0 text-gray-800">Cart</h1>
-	<a href="#"
-		class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-		class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+<h1 class="h3 mb-2 text-gray-800">Get Cart</h1>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Cart list</h6>
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>User_id</th>
+						<th>User_name</th>
+						<th>Item_id</th>
+						<th>Item_name</th>
+						<th>Item_price</th>
+						<th>Cnt</th>
+						<th>Total_price</th>
+						<th>Rdate</th>
+						<th>Item_image</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- for문 돌리기 -->
+					<tr th:each = "ca:${cartlist}">
+						<td th:text="${ca.id}">id</td>
+						<td th:text="${ca.user_id}">user_id</td>
+						<td th:text="${ca.user_name}">user_name</td>
+						<td th:text="${ca.item_id}">item_id</td>
+						<td th:text="${ca.item_name}">item_name</td>
+						<td th:text="${ca.item_price}">item_price</td>
+						<td th:text="${ca.cnt}">cnt</td>
+						<td th:text="${ca.total_price}">total_price</td>
+						<td th:text="${#dates.format(ca.rdate, 'yyyy-MM-dd')}">rdate</td>
+						<td><img th:src="'/img/'+${ca.item_imgname}"></td>
+						<td>
+							<!-- id로 쓰면 button이 하나의 아이디로 묶여있기 때문에 cart에는 다지워진것처럼 나오게됨!! -->
+      						<!-- conlick을 써야함! -->
+     						<!--delete버튼을 누를때마다 매번 값을 넣어주는 것임!! -->
+      						<button  th:onclick = "del([[${ca.id}]])" type="button" class="btn btn-default btn-sm">
+        						<span class="glyphicon glyphicon-trash"></span>Delete
+      						</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
+
 <!-- 필요하면 이밑에 content row를 넣으면 됨! -->

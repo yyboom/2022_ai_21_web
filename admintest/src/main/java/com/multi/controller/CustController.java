@@ -35,7 +35,7 @@ public class CustController {
 		return "index";
 	}
 	
-	//detail
+	//get->detail
 	@RequestMapping("/detail")
 	public String detail(Model model, String id) {
 		CustDTO cust = null;
@@ -51,7 +51,7 @@ public class CustController {
 		return "index";
 	}
 	
-	//update
+	//detail->update
 	@RequestMapping("/update")
 	public String update(Model model, CustDTO cust) {
 		try {
@@ -63,7 +63,7 @@ public class CustController {
 		return "redirect:detail?id="+cust.getId();
 	}
 	
-	//delete
+	//detail->delete
 	@RequestMapping("/delete")
 	public String delete(Model model, String id) {
 		try {
@@ -74,21 +74,22 @@ public class CustController {
 		}
 		return "redirect:get";
 	}
-	
+	//register
 	@RequestMapping("/register")
 	public String register(Model model) {
 		model.addAttribute("center", dir+"register");
 		return "index";
 	}
 	
-	//registerimpl
+	//resister->registerimpl
 	@RequestMapping("/registerimpl")
-	public String registerimpl(Model model, CustDTO cust) {
+	public String registerimpl(Model model, CustDTO cust) throws Exception {
 		try {
 			service.register(cust);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// deuplicated문제가 발생할 때!
+			throw new Exception("ID 중복 에러");
+			//던지고 나서 밑에 return으로 가지 않음!
 		}
 		//반드시 redirect로 써줘야함! 
 		//redirect는 controller를 실행하라는 의미이기 때문에 내가 등록을 하면 get controller를 실행해서 새로 등록하려는 아이디를 등록한 후

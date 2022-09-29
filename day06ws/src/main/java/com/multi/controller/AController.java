@@ -60,5 +60,16 @@ public class AController {
 		}
 		return "";
 	}
+	//ajax로 modifycart만 딱 해주는 것!
+	@RequestMapping("/modifycart")
+	public Object modify(CartDTO cart){
+		try {
+			cart_service.modify(cart);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
 	
 }

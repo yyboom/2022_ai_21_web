@@ -9,6 +9,57 @@
 	} 
 </style>
 <script>
+$(document).ready(function(){
+	//버튼 이벤트
+	//up
+	$('#up_btn').click(function(){
+		//input창의 num을 증가시켜야함!
+		//num을 불러옴
+		var num = $('#num').val();
+		//덧셈이 안됨. String으로 배포되기 때문 이를 number타입으로 변환시켜줘야함
+		var result = Number(num) + 1;
+		//result를 다시 num에 넣어준다.
+		$('#num').val(result);
+	});
+	//down
+	$('#down_btn').click(function(){
+		//input창의 num을 감소시켜야함!
+		//num을 불러옴
+		var num = $('#num').val();
+		//0이 되었을때는 더이상 감소가 안되게!
+		if(num=='0'){
+			//중단시켜라
+			return;
+		}
+		//덧셈이 안됨. String으로 배포되기 때문 이를 number타입으로 변환시켜줘야함
+		var result = Number(num) - 1;
+		//result를 다시 num에 넣어준다.
+		$('#num').val(result);
+	});
+	//changecnt
+	$('#ok').click(function(){
+		var item_id= $('#item_id').text();
+		var item_cnt=$('#num').val();
+		//tymleaf로 되어있는거 불러올때 주의해야함!
+		var cust_id='[[${session.logincust.id}]]';
+		
+		//cnt가 0이면 안됨
+		if(item_cnt == '0'){
+			return;
+		}
+		
+		//위에서 불러온 애들을 뿌려줘야함!
+		//이때 화면이 전환되면 안되고 거기서 바로 발생해야함 => ajax로 뿌려줘야함
+		$.ajax({
+			url:'/modifycart',
+			data:{'user_id':cust_id, 'item_id':item_id, 'cnt':item_cnt},
+			success:function(data){
+			}
+		});
+		
+	});
+	
+});	
 function del(id){
 	var user_id = '[[${session.logincust.id}]]';
 	var c = confirm('삭제 하시겠습니까 ?');
@@ -21,8 +72,7 @@ function del(id){
 </script>
 
 <div class="container">
-  <h2>Basic Table</h2>
-  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+  <h2>Cart list</h2>
   <table class="table">
     <thead>
       <tr>
@@ -44,10 +94,24 @@ function del(id){
         <td id="cid" th:text="${ca.id}">no</td>
         <td th:text="${ca.user_id}">user_id</td>
         
-        <td th:text="${ca.item_id}">item_id</td>
+        <td id="iid" th:text="${ca.item_id}">item_id</td>
         <td th:text="${ca.item_name}">item_name</td>
         <td th:text="${ca.item_price}">item_price</td>
-        <td th:text="${ca.cnt}">cnt</td>
+        <td>
+        	<input type="number" th:value="${ca.cnt}" class="form-control" id="num" readonly="readonly">
+			<!-- item을 하나 더할 때 -->
+			<button type="button" class="btn btn-default btn-sm" id="up_btn">
+         		<span class="glyphicon glyphicon-plus"></span>
+    		</button>
+    		<!-- item을 하나 뺄 때 -->
+    		<button type="button" class="btn btn-default btn-sm" id="down_btn">
+         		<span class="glyphicon glyphicon-minus"></span>
+    		</button>
+    		<!-- 바꾼 후 ok button -->
+    		<button type="button" class="btn btn-default btn-sm" id="ok">
+          		<span class="glyphicon glyphicon-ok"></span>
+        	</button>
+        </td>
         <td th:text="${ca.total_price}">total_price</td>
         <td th:text="${#dates.format(ca.rdate, 'yyyy-MM-dd')}">rdate</td>
         <td><img th:src="'/img/'+${ca.item_imgname}"></td>
