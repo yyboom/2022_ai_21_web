@@ -7,8 +7,19 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<!-- 넣어주는게 없으니 parameter이 없음 -->
 	<!-- crud가 아닐때는 따로 xml을 빼서 만들어줘서 할수 있음 -->
 	<select id="getCustCnt" resultType="Integer">
-	   <!-- column의 개수를 test하라 -->
+		<!-- column의 개수를 test하라 -->
 		SELECT count(*) FROM cust
 	</select>
-	
+
+	<select id="getCartItemCnt" resultType="Integer">
+		<!-- column의 개수를 test하라 -->
+		SELECT sum(cnt) AS total_item_count FROM cart
+	</select>
+
+	<select id="getCartPrice" resultType="Integer">
+		<!-- column의 개수를 test하라 -->
+		SELECT sum(i.price*ca.cnt) AS total_price FROM cart ca
+		INNER JOIN item i ON ca.item_id=i.id
+	</select>
+
 </mapper>

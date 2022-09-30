@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface AJAXMapper {
 	//개수를 세려고 하는 것!
 	public int getCustCnt();
+	public int getCartItemCnt();
+	public int getCartPrice();
 }
