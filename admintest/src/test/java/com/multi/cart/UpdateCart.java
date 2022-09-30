@@ -4,20 +4,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.multi.dto.CustDTO;
-import com.multi.service.CustService;
+import com.multi.dto.CartDTO;
+import com.multi.service.CartService;
 
 @SpringBootTest
 class UpdateCart {
 
 	@Autowired
-	CustService service;
-	
+	CartService service;
+
 	@Test
 	void contextLoads() {
-		CustDTO cust = new CustDTO("id88", "pwd99", "kim");
+		CartDTO cart = new CartDTO(0, null, null, 0, null, 0, 0, 0, null, null);
 		try {
-			service.modify(cust);
+			service.modify(cart);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

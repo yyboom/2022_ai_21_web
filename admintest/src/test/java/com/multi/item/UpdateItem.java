@@ -15,9 +15,11 @@ class UpdateItem {
 	
 	@Test
 	void contextLoads() {
-		ItemDTO item = new ItemDTO(0, "bread", 5000, "e.jpg", null);
+		//반드시 변경되어야 하는 아이디 값을 지정해줘야함!
+		ItemDTO item = new ItemDTO(105, "bread",6000, "e.jpg", null,null);
 		try {
 			service.modify(item);
+			System.out.println(item);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

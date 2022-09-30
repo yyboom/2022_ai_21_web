@@ -96,7 +96,7 @@ $(document).ready(function(){
 				aria-expanded="true" aria-controls="collapseOne"> <i
 					class="fas fa-fw fa-cog"></i> <span>Customer</span>
 			</a>
-				<div id="collapseOne" class="collapse" aria-labelledby="headingTwo"
+				<div th:if="${session.loginadmin != null}" id="collapseOne" class="collapse" aria-labelledby="headingTwo"
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Customer:</h6>
@@ -106,10 +106,10 @@ $(document).ready(function(){
 				</div></li>
 			<!-- Adnub menu - Pages Collapse Menu -->
 			<!-- 이 템플릿은 구조상 data target을 바꿔줘야 따로따로 움직일 수 잇음 -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
+			<li th:if="${session.loginadmin != null} and ${session.loginadmin.lev==1}" class="nav-item"><a class="nav-link collapsed" href="#"
 				data-toggle="collapse" data-target="#collapseTwo"
 				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-cog"></i> <span>Administration</span>
+					class="fas fa-fw fa-cog"></i> <span>Administer</span>
 			</a>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 					data-parent="#accordionSidebar">
@@ -126,7 +126,7 @@ $(document).ready(function(){
 				aria-expanded="true" aria-controls="collapseUtilities"> <i
 					class="fas fa-fw fa-wrench"></i> <span>Item</span>
 			</a>
-				<div id="collapseUtilities" class="collapse"
+				<div th:if="${session.loginadmin != null}" id="collapseUtilities" class="collapse"
 					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Item:</h6>
@@ -142,7 +142,7 @@ $(document).ready(function(){
 			<li class="nav-item"><a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilitiestwo"
 				aria-expanded="true" aria-controls="collapseUtilitiestwo">
 					<i class="fas fa-fw fa-table"></i> <span>Cart</span></a>
-				<div id="collapseUtilitiestwo" class="collapse"
+				<div th:if="${session.loginadmin != null}" id="collapseUtilitiestwo" class="collapse"
 					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Cart:</h6>

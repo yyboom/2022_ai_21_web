@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+<script>
+	//update
+	$(document).ready(function() {
+		$('#update_btn').click(function() {
+			$('#detail_form').attr({
+				'method' : 'post',
+				'action' : '/item/update'
+			});
+			$('#detail_form').submit();
+		})
+	});
+	//delete
+	function del(id) {
+		var c = confirm('삭제하시겠습니까?');
+		if (c == true) {
+			location.href = "/item/delete?id=" + id;
+		}
+	}
+</script>
+<!-- 특정 사용자의 detail을 알려주는 화면 -->
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800">Detail Item</h1>
+</div>
+<!-- Detail Area -->
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Item Information</h6>
+	</div>
+	<div class="card-body">
+		<form id="detail_form">
+			<div class="form-group">
+				<label for="imgname"></label> <input
+					class="form-control" id="imgname" th:value="${i.imgname}" name="imgname">
+					<img th:src="'/img/'+${i.imgname}">
+			</div>
+			<div class="form-group">
+				<!-- for은 바로 밑줄의 id를 의미함! -->
+				<label for="id">ID:</label>
+				<!-- name은 서버에 전송될때 사용되는 변수! -->
+				<input type="number" class="form-control" id="id" th:value="${i.id}"
+					name="id" readonly="readonly">
+			</div>
+			<div class="form-group">
+				<label for="name">NAME:</label>
+				<!-- name은 서버 전송시 쓰일 변수임 -->
+				<input type="text" class="form-control" id="name"
+					th:value="${i.name}" name="name">
+			</div>
+			<div class="form-group">
+				<label for="price">PRICE:</label> <input type="number"
+					class="form-control" id="price" th:value="${i.price}" name="price">
+			</div>
+			<div class="form-group">
+				<label for="rdate">RDATE:</label> <input th:text="${#dates.format(i.rdate)}"
+					class="form-control" id="rdate" th:value="${i.rdate}" name="rdate" readonly="readonly">
+			</div>
+		</form>
+		<button id="update_btn" class="btn btn-default">UPDATE</button>
+		<button th:onclick="del([[${i.id}]])" id="delete_btn"
+			class="btn btn-default">DELETE</button>
+	</div>
+</div>
+<!-- 필요하면 이밑에 content row를 넣으면 됨! -->

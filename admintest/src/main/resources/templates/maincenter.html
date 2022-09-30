@@ -1,4 +1,23 @@
 <meta charset="utf-8">
+<script>
+//문서
+function getCustCnt(){
+	$.ajax({
+		url:'/custcnt',
+		success:function(data){
+			$('#cust_cnt').text(data);
+		}
+	});
+};
+//위의 문서가 준비 되면 실행되라!
+$(document).ready(function(){
+	getCustCnt();
+	
+	setInterval(() => {
+		getCustCnt();
+	}, 5000);
+});
+</script>
 
 <!-- Page Heading -->
 <div
@@ -20,8 +39,9 @@
 					<div class="col mr-2">
 						<div
 							class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-							Earnings (Monthly)</div>
-						<div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+							Customer Count</div>
+							<!-- ajax로 customer count한 것을 뿌려줌 -->
+						<div id="cust_cnt" class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>

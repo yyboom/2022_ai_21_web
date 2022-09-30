@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 어디를 통해서 들어오는지! -->
+<mapper namespace="com.multi.mapper.AJAXMapper">
+	<!-- 넣어주는게 없으니 parameter이 없음 -->
+	<!-- crud가 아닐때는 따로 xml을 빼서 만들어줘서 할수 있음 -->
+	<select id="getCustCnt" resultType="Integer">
+	   <!-- column의 개수를 test하라 -->
+		SELECT count(*) FROM cust
+	</select>
+	
+</mapper>
