@@ -11,11 +11,6 @@
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="com.multi.biz.ItemBiz"/>
-    <fullyQualifiedTypeName name="lombok.Getter"/>
-    <fullyQualifiedTypeName name="lombok.Setter"/>
-    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
-    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-    <fullyQualifiedTypeName name="lombok.ToString"/>
     <fullyQualifiedTypeName name="com.multi.frame.MyMapper"/>
     <fullyQualifiedTypeName name="com.multi.frame.MyService"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
@@ -39,7 +34,6 @@
     <fullyQualifiedTypeName name="com.multi.service.CartService"/>
     <fullyQualifiedTypeName name="com.multi.dto.CartDTO"/>
     <fullyQualifiedTypeName name="com.multi.service.ItemService"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
     <fullyQualifiedTypeName name="com.multi.dto.ItemDTO"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
@@ -49,5 +43,13 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Mapper"/>
     <fullyQualifiedTypeName name="com.multi.mapper.AJAXMapper"/>
+    <fullyQualifiedTypeName name="java.sql.Array"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

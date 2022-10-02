@@ -50,6 +50,14 @@ $(document).ready(function(){
 		});
 		$('#login_form').submit();
 	});
+	$('#search_btn').click(function(){
+		$('#search_text').attr({
+			method:'post',
+			//maincontroller로 전송하면 되기 때문에 그냥 /loginimpl로 보냄!
+			action:'/searchimpl'
+		});
+		$('#search_text').submit();
+	});
 });
 </script>
 
@@ -177,11 +185,11 @@ $(document).ready(function(){
 					<form
 						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 						<div class="input-group">
-							<input type="text" class="form-control bg-light border-0 small"
+							<input id="search_text" type="text" name="search_content" class="form-control bg-light border-0 small"
 								placeholder="Search for..." aria-label="Search"
 								aria-describedby="basic-addon2">
 							<div class="input-group-append">
-								<button class="btn btn-primary" type="button">
+								<button id="search_btn" class="btn btn-primary" type="button">
 									<i class="fas fa-search fa-sm"></i>
 								</button>
 							</div>
