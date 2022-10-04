@@ -35,9 +35,11 @@
 <!-- Page level plugins -->
 <script src="/vendor/chart.js/Chart.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="/js/demo/chart-area-demo.js"></script>
-<script src="/js/demo/chart-pie-demo.js"></script>
+<!-- Charts library -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <!-- event처리 -->
 <script>
@@ -50,13 +52,15 @@ $(document).ready(function(){
 		});
 		$('#login_form').submit();
 	});
+});
+$(document).ready(function(){
 	$('#search_btn').click(function(){
-		$('#search_text').attr({
-			method:'post',
-			//maincontroller로 전송하면 되기 때문에 그냥 /loginimpl로 보냄!
+		$('#search_form').attr({
+			method:'get',
+			//maincontroller로 전송하면 되기 때문에 그냥 /searchimpl로 보냄!
 			action:'/searchimpl'
 		});
-		$('#search_text').submit();
+		$('#search_form').submit();
 	});
 });
 </script>
@@ -182,10 +186,11 @@ $(document).ready(function(){
 					</button>
 
 					<!-- Topbar Search -->
-					<form
+					<!-- form사이 데이터를 전송하는데 이때 input은 txt라는 이름으로 전송! -->
+					<form id="search_form"
 						class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
 						<div class="input-group">
-							<input id="search_text" type="text" name="search_content" class="form-control bg-light border-0 small"
+							<input type="text" name="txt" class="form-control bg-light border-0 small"
 								placeholder="Search for..." aria-label="Search"
 								aria-describedby="basic-addon2">
 							<div class="input-group-append">

@@ -6,7 +6,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 <mapper namespace="com.multi.mapper.ItemMapper">
 	<!-- select를 부르면 argument로 Integer형태로 들어올 것이고 sql의 결과를 itemDTO로 보내겠다. -->
 	<select id="select" parameterType="Integer" resultType="ItemDTO">
-		SELECT * FROM item WHERE id=#{id}
+		SELECT *
+		FROM item WHERE id=#{id}
+	</select>
+	<select id="searchitem" parameterType="String" resultType="ItemDTO">
+	<!-- string을 하나로 뭉치는 것이 concat임! 양옆에 %을 더해주는 방식으로 감!-->
+		SELECT *
+		FROM item WHERE name LIKE CONCAT('%',#{txt},'%')
 	</select>
 	<select id="selectall" resultType="ItemDTO">
 		SELECT * FROM item
@@ -14,14 +20,17 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<!-- id,pwd를 끄집어낼 때는 get,set으로 입력받고 나오게 될것 -->
 	<!-- id는 자동증가이므로 sql과 맞게 null,sysdate로! -->
 	<insert id="insert" parameterType="ItemDTO">
-		INSERT INTO item VALUES (NULL,#{name},#{price},#{imgname},SYSDATE())
+		INSERT INTO item VALUES
+		(NULL,#{name},#{price},#{imgname},SYSDATE())
 	</insert>
 	<!-- date는 수정 불가 -->
 	<update id="update" parameterType="ItemDTO">
-		UPDATE item SET name=#{name},price=#{price},imgname=#{imgname} WHERE id=#{id}
+		UPDATE item SET
+		name=#{name},price=#{price},imgname=#{imgname} WHERE id=#{id}
 	</update>
 	<delete id="delete" parameterType="Integer">
-		DELETE FROM item WHERE id=#{id}
+		DELETE FROM item WHERE
+		id=#{id}
 	</delete>
-	
+
 </mapper>

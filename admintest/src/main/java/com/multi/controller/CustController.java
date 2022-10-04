@@ -85,6 +85,9 @@ public class CustController {
 	@RequestMapping("/registerimpl")
 	public String registerimpl(Model model, CustDTO cust) throws Exception {
 		try {
+			//service이후가 에러가 나면 안들어가게 transaction을 걸어줘야함!! 
+			//뒤의 데이터가 안맞으면 앞에 잘 되던것도 거절하게 만들어야 함
+			//그래야 데이터 관리가 좋음
 			service.register(cust);
 		} catch (Exception e) {
 			// deuplicated문제가 발생할 때!

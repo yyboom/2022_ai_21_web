@@ -1,6 +1,6 @@
 package com.multi.controller;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.multi.dto.AdmDTO;
-//import com.multi.mapper.content;
+import com.multi.dto.ItemDTO;
+import com.multi.mapper.ItemMapper;
 import com.multi.service.AdmService;
 
 @Controller
@@ -20,7 +21,7 @@ public class MainController {
 	AdmService service;
 	
 	@Autowired
-	//content content;
+	ItemMapper mapper;
 	
 	@RequestMapping("/")
 	public String main() {
@@ -58,10 +59,18 @@ public class MainController {
 	//login->searchimpl
 	//login부분은 modal창으로 해결함!
 	@RequestMapping("/searchimpl")
-	public String searchimpl(HttpSession session, String content, Model model) {
-		//ArrayList<content> content = null;
+	//input은 name이 들어옴!!
+	public String searchimpl(String txt, Model model) {
+		List<ItemDTO> list =  null;
 		
-		//content=content.
-		return "redirect:/";
+		try {
+			list= mapper.searchitem(txt);
+			model.addAttribute("itemlist", list);
+			model.addAttribute("center", "search");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "index";
 	}
 }

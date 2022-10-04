@@ -1,5 +1,7 @@
 package com.multi.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +15,5 @@ import com.multi.frame.MyMapper;
 @Mapper
 public interface ItemMapper extends MyMapper<Integer, ItemDTO>{
 //상속받은 것들이 있는 것
+	public List<ItemDTO> searchitem(String txt) throws Exception;
 }

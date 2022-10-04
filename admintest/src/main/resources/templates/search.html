@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<style>
+	table>tbody>tr>td>a>img{
+		width:100px;
+	}
+	table>tbody>tr>td>a>img:hover{
+		width:99px;
+		border:1px solid red;
+	}
+</style>
+<!-- Page Heading -->
+<div
+	class="d-sm-flex align-items-center justify-content-between mb-4">
+	<h1 class="h3 mb-0 text-gray-800">Search item</h1>
+</div>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Search item Table</h6>
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<th>IMG</th>
+						<th>ID</th>
+						<th>NAME</th>
+						<th>PRICE</th>
+						<th>RDATE</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- for문 돌리기 -->
+					<tr th:each = "i:${itemlist}">
+						<td><img th:src="'/img/'+${i.imgname}"></td>
+						<td><a th:href="@{/item/detail(id=${i.id})}" th:text="${i.id}">id</a></td>
+						<td th:text="${i.name}">name</td>
+						<td th:text="${i.price}">price</td>
+						<td th:text="${i.rdate}">rdate</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+    <!-- Page level plugins -->
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/datatables-demo.js"></script>
+
+<!-- 필요하면 이밑에 content row를 넣으면 됨! -->

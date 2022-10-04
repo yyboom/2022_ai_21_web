@@ -37,11 +37,87 @@ $(document).ready(function(){
 		getCartPrice();
 	}, 5000);
 });
+
+function display1(data){
+	Highcharts.chart('container', {
+	    chart: {
+	        type: 'column'
+	    },
+	    title: {
+	        text: 'Emissions to air in Norway'
+	    },
+	    subtitle: {
+	        text: 'Source: ' +
+	            '<a href="https://www.ssb.no/en/statbank/table/08940/" ' +
+	            'target="_blank">SSB</a>'
+	    },
+	    xAxis: {
+	        categories: [
+	            '1',
+	            '2',
+	            '3',
+	            '4',
+	            '5',
+	            '6'
+	        ],
+	        crosshair: true
+	    },
+	    yAxis: {
+	        title: {
+	            useHTML: true,
+	            text: 'Million tonnes CO<sub>2</sub>-equivalents'
+	        }
+	    },
+	    tooltip: {
+	        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+	        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+	            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+	        footerFormat: '</table>',
+	        shared: true,
+	        useHTML: true
+	    },
+	    plotOptions: {
+	        column: {
+	            pointPadding: 0.2,
+	            borderWidth: 0
+	        }
+	    },
+	    
+	    series:data
+	    //배열의 형태임! jason array로 던져짐!
+//	    series: [{
+	    	//mobj
+//	        name: 'Male',
+//	        data: [13.93, 13.63, 13.73, 13.67, 14.37, 14.89]
+
+//	    }, {
+	    	//fobj
+//	        name: 'Female',
+//	        data: [12.24, 12.24, 11.95, 12.02, 11.65, 11.96]
+
+//	    }]
+	});
+};
+
+function getdata1(){
+	//ajax로 서버에서 data를 요청
+	$.ajax({
+		url:'/chart1',
+		success:function(data){
+			display1(data);
+		}
+	});
+	//이후 화면에 뿌린다.
+	display1();
+};
+
+$(document).ready(function(){
+	getdata1();
+})
 </script>
 
 <!-- Page Heading -->
-<div
-	class="d-sm-flex align-items-center justify-content-between mb-4">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
 	<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 	<a href="#"
 		class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
@@ -60,7 +136,7 @@ $(document).ready(function(){
 						<div
 							class="text-xs font-weight-bold text-primary text-uppercase mb-1">
 							Customer Count</div>
-							<!-- ajax로 customer count한 것을 뿌려줌 -->
+						<!-- ajax로 customer count한 것을 뿌려줌 -->
 						<div id="cust_cnt" class="h5 mb-0 font-weight-bold text-gray-800"></div>
 					</div>
 					<div class="col-auto">
@@ -80,8 +156,9 @@ $(document).ready(function(){
 						<div
 							class="text-xs font-weight-bold text-primary text-uppercase mb-1">
 							Cart Item Count</div>
-							<!-- ajax로 customer count한 것을 뿌려줌 -->
-						<div id="cart_item_cnt" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+						<!-- ajax로 customer count한 것을 뿌려줌 -->
+						<div id="cart_item_cnt"
+							class="h5 mb-0 font-weight-bold text-gray-800"></div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -90,7 +167,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Earnings (Monthly) Card Example -->
 	<div class="col-xl-3 col-md-6 mb-4">
 		<div class="card border-left-primary shadow h-100 py-2">
@@ -100,8 +177,9 @@ $(document).ready(function(){
 						<div
 							class="text-xs font-weight-bold text-primary text-uppercase mb-1">
 							Cart price</div>
-							<!-- ajax로 customer count한 것을 뿌려줌 -->
-						<div id="cart_price" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+						<!-- ajax로 customer count한 것을 뿌려줌 -->
+						<div id="cart_price"
+							class="h5 mb-0 font-weight-bold text-gray-800"></div>
 					</div>
 					<div class="col-auto">
 						<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -110,8 +188,8 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
-	
-		<!-- Earnings (Monthly) Card Example -->
+
+	<!-- Earnings (Monthly) Card Example -->
 	<div class="col-xl-3 col-md-6 mb-4">
 		<div class="card border-left-success shadow h-100 py-2">
 			<div class="card-body">
@@ -137,8 +215,8 @@ $(document).ready(function(){
 				<div class="row no-gutters align-items-center">
 					<div class="col mr-2">
 						<div
-							class="text-xs font-weight-bold text-info text-uppercase mb-1">Cart Count
-						</div>
+							class="text-xs font-weight-bold text-info text-uppercase mb-1">Cart
+							Count</div>
 						<div class="row no-gutters align-items-center">
 							<div class="col-auto">
 								<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
@@ -180,3 +258,41 @@ $(document).ready(function(){
 	</div>
 </div>
 <!-- 필요하면 이밑에 content row를 넣으면 됨! -->
+<!-- Content Row -->
+
+<div class="row">
+
+	<!-- Hist Chart -->
+	<div class="col-xl-6 col-lg-6">
+		<div class="card shadow mb-4">
+			<!-- Card Header - Dropdown -->
+			<div
+				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+				<h6 class="m-0 font-weight-bold text-primary">Monthly Sales</h6>
+			</div>
+			<!-- Card Body -->
+			<div class="card-body">
+				<!-- 그래프가 그려질 부분 -->
+				<div id="container"></div>
+					
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Pie Chart -->
+	<div class="col-xl-6 col-lg-6">
+		<div class="card shadow mb-4">
+			<!-- Card Header - Dropdown -->
+			<div
+				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+				<h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+
+
+			</div>
+			<!-- Card Body -->
+			<div class="card-body"></div>
+		</div>
+	</div>
+</div>
