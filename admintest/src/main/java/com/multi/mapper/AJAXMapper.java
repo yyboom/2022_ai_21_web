@@ -17,4 +17,5 @@ public interface AJAXMapper {
 	public int getCartPrice();
 	
 	public List<ChartDTO> chart1();
+	public List<ChartDTO> chart2();
 }

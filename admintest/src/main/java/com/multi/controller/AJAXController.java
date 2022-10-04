@@ -91,4 +91,41 @@ public class AJAXController {
 		
 		return result;
 	}
+	
+	//chart2
+	@RequestMapping("/chart2")
+	public Object chart2() {
+		List<ChartDTO> list = null;
+		JSONArray ja = new JSONArray();
+		JSONObject mobj = new JSONObject();
+		JSONObject fobj = new JSONObject();
+		
+		mobj.put("name", "Male");
+		fobj.put("name", "Female");
+		
+		JSONArray mja = new JSONArray();
+		JSONArray fja = new JSONArray();
+		
+		list=mapper.chart2();
+		
+		for(ChartDTO c: list) {
+			if(c.getGender().equals("M")) {
+				int a=0;
+				a=c.getTotal_price();
+				mja.add(a);
+				
+			}else if(c.getGender().equals("F")) {
+				int b=0;
+				b=c.getTotal_price();
+				fja.add(b);
+			}
+		}
+		mobj.put("data", mja);
+		fobj.put("data", fja);
+		
+		ja.add(mobj);
+		ja.add(fobj);
+		
+		return ja;
+	}
 }

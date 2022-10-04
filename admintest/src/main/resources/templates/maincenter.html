@@ -38,6 +38,7 @@ $(document).ready(function(){
 	}, 5000);
 });
 
+//chart1
 function display1(data){
 	Highcharts.chart('container', {
 	    chart: {
@@ -94,9 +95,67 @@ function getdata1(){
 	display1();
 };
 
+//chart2
+function display2(data){
+	Highcharts.chart('container1', {
+	    chart: {
+	        plotBackgroundColor: null,
+	        plotBorderWidth: null,
+	        plotShadow: false,
+	        type: 'pie'
+	    },
+	    title: {
+	        text: 'Browser market shares in May, 2020'
+	    },
+	    tooltip: {
+	        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	    },
+	    accessibility: {
+	        point: {
+	            valueSuffix: '%'
+	        }
+	    },
+	    plotOptions: {
+	        pie: {
+	            allowPointSelect: true,
+	            cursor: 'pointer',
+	            dataLabels: {
+	                enabled: true,
+	                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+	            }
+	        }
+	    },
+	    series: [{
+	        name: 'chart2',
+	        colorByPoint: true,
+	        data: [{
+	            name: data['name'],
+	            y: data['data'],
+	            sliced: true,
+	            selected: true
+	        }]
+	    }]
+	});
+};
+
+function getdata2(){
+	//ajax로 서버에서 data를 요청
+	$.ajax({
+		url:'/chart2',
+		success:function(data){
+			//data의 모양 //{"month":[1,2,3,4,5,6], "result":[{},{}]}
+			display2(data);
+		}
+	});
+	//이후 화면에 뿌린다.
+	display2();
+};
+
 $(document).ready(function(){
 	getdata1();
-})
+	getdata2();
+});
+
 </script>
 
 <!-- Page Heading -->
@@ -270,12 +329,15 @@ $(document).ready(function(){
 			<!-- Card Header - Dropdown -->
 			<div
 				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-				<h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+				<h6 class="m-0 font-weight-bold text-primary">Gender Chart</h6>
 
 
 			</div>
 			<!-- Card Body -->
-			<div class="card-body"></div>
+			<div class="card-body">
+				<!-- 그래프가 그려질 부분 -->
+				 <div id="container1"></div>
+			</div>
 		</div>
 	</div>
 </div>
