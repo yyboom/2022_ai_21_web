@@ -1,13 +1,16 @@
 package com.multi.controller;
 
+import java.util.List;
 import java.util.Random;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.multi.dto.ChartDTO;
 import com.multi.mapper.AJAXMapper;
 
 
@@ -45,6 +48,11 @@ public class AJAXController {
 	//chart1
 	@RequestMapping("/chart1")
 	public Object chart1() {
+		List<ChartDTO> list =null;
+		JSONObject result = new JSONObject();
+		
+		JSONArray month_ja = new JSONArray();
+		
 		JSONArray ja = new JSONArray();
 		JSONObject mobj = new JSONObject();
 		JSONObject fobj = new JSONObject();
@@ -52,13 +60,22 @@ public class AJAXController {
 		mobj.put("name", "Male");
 		fobj.put("name", "Female");
 		
+		int m =0;
+		
+		list=mapper.chart1();
 		//database연결 전 가상으로 넣어본 것
 		JSONArray mja = new JSONArray();
 		JSONArray fja = new JSONArray();
-		for(int i=1;i<=6;i++) {
-			Random r = new Random();
-			mja.add(r.nextInt(10000)+1);
-			fja.add(r.nextInt(10000)+1);
+		for(ChartDTO c:list) {
+			if(c.getGender().equals("M")) {
+				mja.add(c.getPrice());
+				
+			}else if(c.getGender().equals("F")) {
+				fja.add(c.getPrice());
+				//해당 month까지 추가함
+				m++;
+				month_ja.add(m);
+			}
 		}
 		
 		mobj.put("data", mja);
@@ -66,6 +83,12 @@ public class AJAXController {
 		
 		ja.add(mobj);
 		ja.add(fobj);
-		return ja;
+		//현재상태 [{},{}]
+		
+		//{"month":[1,2,3,4,5,6], "result":[{},{}]}이런식으로 바꿔주면 month도 같이 넣어줄 수 있음!
+		result.put("month", month_ja);
+		result.put("result", ja);
+		
+		return result;
 	}
 }

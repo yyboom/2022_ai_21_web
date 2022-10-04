@@ -15,6 +15,8 @@ public class ChartDTO {
 //chart를 불러오는 것
 	private String month;
 	private String gender;
+	private int price;
+	
 	private int total_price;
 	
 }

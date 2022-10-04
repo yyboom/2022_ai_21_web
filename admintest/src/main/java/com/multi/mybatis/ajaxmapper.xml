@@ -19,7 +19,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="getCartPrice" resultType="Integer">
 		<!-- column의 개수를 test하라 -->
 		SELECT sum(i.price*ca.cnt) AS total_price FROM cart ca
-		INNER JOIN item i ON ca.item_id=i.id
+		INNER JOIN item
+		i ON ca.item_id=i.id
+	</select>
+
+	<select id="chart1" resultType="ChartDTO">
+		SELECT DATE_FORMAT(rdate,'%m') AS month, gender, price FROM sales
+		GROUP BY month, gender
 	</select>
 
 </mapper>
