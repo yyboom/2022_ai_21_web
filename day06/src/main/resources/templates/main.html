@@ -62,23 +62,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/">HOME</a>
+      <a class="navbar-brand" href="/" th:text='#{hometext}'></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       	<!-- 각각을 요청했을 때 어떻게 서버(maincontroller)에 요청할 것인지 -->
-        <li><a href="/item">Item</a></li>
+        <li><a href="/item" th:text='#{item}'></a></li>
         <!-- login을 했는지 안했는지 확인한 후 null이 아닐때만 cart를 보여지게 함! -->
         <li th:if="${session.logincust != null}">
          	<!-- session에서 id를 가져와야함!  -->
-        	<a th:href="@{/cart(id=${session.logincust.id})}">Cart</a>
+        	<a th:href="@{/cart(id=${session.logincust.id})}" th:text='#{cart}'></a>
         </li>
       </ul>
       <!-- session에 로그인 아이디가 없으면 첫번째 ul-->
       <ul th:if="${session.logincust == null}" class="nav navbar-nav navbar-right">
       	<!-- login, register부분을 따로 만들어둠! 로그인을 하기 전(왼쪽 위 상단 부분)-->
-        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
-        <li><a href="/register"><span class="glyphicon glyphicon-new-window"></span>&nbsp; Register</a></li>
+        <li><a href="/login" th:text='#{login}'><span class="glyphicon glyphicon-log-in"></span>&nbsp;</a></li>
+        <li><a href="/register" th:text='#{register}'><span class="glyphicon glyphicon-new-window"></span>&nbsp;</a></li>
       </ul>
       <!-- session에 로그인 아이디가 있으면 두번째 ul-->
       <ul th:if="${session.logincust != null}" class="nav navbar-nav navbar-right">
@@ -87,7 +87,7 @@
       	<!-- 로그인 성공 시 이름으로 바뀌게 나옴, 이름을 클릭 했을 때 custdetail이 나오도록!! -->
       	<!-- 이때 아이디는 session안에 logincust id에 있는 상태임 -->
         <li><a th:href="@{/custdetail(id=${session.logincust.id})}" th:text="${session.logincust.name}"></a></li>
-        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Logout</a></li>
+        <li><a href="/logout" th:text='#{logout}'><span class="glyphicon glyphicon-log-out"></span>&nbsp; </a></li>
       </ul>
     </div>
   </div>
