@@ -1,5 +1,6 @@
 package com.multi.ajax;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -18,9 +19,11 @@ class Chart2 {
 	
 	@Test
 	void contextLoads() {
-		List<ChartDTO> list = null;
-		
-		list=mapper.chart2();
+		HashMap<String,Object> map = new HashMap<String, Object>();
+		map.put("sm", "2");
+		map.put("em", "4");
+		List<ChartDTO> list =null;
+		list=mapper.chart2(map);
 		
 		for(ChartDTO c : list) {
 			System.out.println(c);

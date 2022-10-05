@@ -1,5 +1,6 @@
 package com.multi.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -70,7 +71,7 @@ public class AJAXController {
 			if(c.getGender().equals("M")) {
 				mja.add(c.getPrice());
 				
-			}else if(c.getGender().equals("F")) {
+			}else{
 				fja.add(c.getPrice());
 				//해당 month까지 추가함
 				m++;
@@ -94,38 +95,23 @@ public class AJAXController {
 	
 	//chart2
 	@RequestMapping("/chart2")
-	public Object chart2() {
+	public Object chart2(String ssm, String eem) {
+		HashMap<String , Object> map = new HashMap<String, Object>();
+		map.put("sm", ssm);
+		map.put("em", eem);
 		List<ChartDTO> list = null;
+		list=mapper.chart2(map);
+		
+		//[{name:'',y:''},{}]
 		JSONArray ja = new JSONArray();
-		JSONObject mobj = new JSONObject();
-		JSONObject fobj = new JSONObject();
-		
-		mobj.put("name", "Male");
-		fobj.put("name", "Female");
-		
-		JSONArray mja = new JSONArray();
-		JSONArray fja = new JSONArray();
-		
-		list=mapper.chart2();
 		
 		for(ChartDTO c: list) {
-			if(c.getGender().equals("M")) {
-				int a=0;
-				a=c.getTotal_price();
-				mja.add(a);
-				
-			}else if(c.getGender().equals("F")) {
-				int b=0;
-				b=c.getTotal_price();
-				fja.add(b);
-			}
+			JSONObject jo = new JSONObject();
+			jo.put("name", c.getGender());
+			jo.put("y", c.getTotal_price());
+			ja.add(jo);
 		}
-		mobj.put("data", mja);
-		fobj.put("data", fja);
-		
-		ja.add(mobj);
-		ja.add(fobj);
-		
+
 		return ja;
 	}
 }

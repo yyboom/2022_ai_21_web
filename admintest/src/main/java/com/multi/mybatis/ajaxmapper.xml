@@ -29,9 +29,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		GROUP BY month, gender
 	</select>
 
-	<select id="chart2" resultType="ChartDTO">
+	<select id="chart2" resultType="ChartDTO" parameterType="java.util.HashMap">
+	<!-- hashmap에 들어가는 key값으로 setting함! -->
 		SELECT gender,sum(price) AS total_price FROM sales
-		WHERE MONTH(rdate) BETWEEN 1 AND 8
+		WHERE MONTH(rdate) BETWEEN #{sm} AND #{em}
 		GROUP BY gender
 	</select>
 

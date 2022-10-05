@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="day06"/>
 <aop-project name="day02"/>
 <aop-project name="day04"/>
-<aop-project name="day06ws"/>
+<aop-project name="day06"/>
 <aop-project name="admintest"/>
-<aop-project name="day05_1"/>
-<aop-project name="day03_1"/>
+<aop-project name="day06ws"/>
 <aop-project name="day01ws"/>
+<aop-project name="day03_1"/>
+<aop-project name="day05_1"/>
 <aop-project name="day01_1"/>
 <aop-project name="day01"/>
 <aop-project name="day03"/>
