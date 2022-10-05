@@ -68,6 +68,7 @@
       <ul class="nav navbar-nav">
       	<!-- 각각을 요청했을 때 어떻게 서버(maincontroller)에 요청할 것인지 -->
         <li><a href="/item" th:text='#{item}'></a></li>
+        <li><a href="/shop">SHOP</a></li>
         <!-- login을 했는지 안했는지 확인한 후 null이 아닐때만 cart를 보여지게 함! -->
         <li th:if="${session.logincust != null}">
          	<!-- session에서 id를 가져와야함!  -->

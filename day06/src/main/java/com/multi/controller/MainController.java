@@ -72,6 +72,16 @@ public class MainController {
 		}
 		return "main";
 	}
+	
+	//shop
+	@RequestMapping("/shop")
+	public String shop(Model model) {
+			//item들을 itemlist에 담음!
+			model.addAttribute("left", "shopleft");
+			//page는 item page가 center로 오게!
+			model.addAttribute("center", "shopcenter");
+		return "main";
+	}
 		
 	//cart
 	@RequestMapping("/cart")
