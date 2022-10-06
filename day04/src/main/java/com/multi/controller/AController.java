@@ -214,6 +214,7 @@ public class AController {
 		
 		JSONObject jo1 = new JSONObject();
 		jo1.put("title", "국밥집");
+		jo1.put("img", "/img/mk1.png");
 		jo1.put("target", "http://www.naver.com");
 		jo1.put("lat", 33.450901);
 		jo1.put("lng", 126.570267);
@@ -221,6 +222,7 @@ public class AController {
 		
 		JSONObject jo2 = new JSONObject();
 		jo2.put("title", "짬뽕집");
+		jo1.put("img", "/img/mk2.png");
 		jo2.put("target", "http://www.daum.net");
 		jo2.put("lat", 33.460901);
 		jo2.put("lng",126.580267);
@@ -228,6 +230,7 @@ public class AController {
 		
 		JSONObject jo3 = new JSONObject();
 		jo3.put("title", "닭발집");
+		jo1.put("img", "/img/mk3.png");
 		jo3.put("target", "http://www.google.com");
 		jo3.put("lat", 33.440901);
 		jo3.put("lng", 126.573267);

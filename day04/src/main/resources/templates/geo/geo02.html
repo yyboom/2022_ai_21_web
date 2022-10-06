@@ -34,7 +34,8 @@ function displaymarker(data){
 	       // image : markerImage // 마커 이미지 
 	    });
 	    //info창
-		var iwContent = data[i].title;
+		var iwContent = '<h3>'+data[i].title+'</h3>';
+		iwContent += '<img width="50px" src="/img/'+data[i].img+'">';
 	    var iwPosition = new kakao.maps.LatLng(data[i].lat, data[i].lng); //인포윈도우 표시 위치입니다
 
 		// 인포윈도우를 생성합니다
@@ -87,9 +88,9 @@ function getdata(){
 		}
 	});
 /*	var data=[
-		{'title':'국밥집', 'target':'http://www.naver.com', 'lat':33.450901, 'lng': 126.570267},
-		{'title':'짬뽕집', 'target':'http://www.daum.net', 'lat':33.460901, 'lng': 126.580267},
-		{'title':'닭발집', 'target':'http://www.google.com', 'lat':33.440901, 'lng': 126.573267}
+		{'img':'mk1.png','title':'국밥집', 'target':'http://www.naver.com', 'lat':33.450901, 'lng': 126.570267},
+		{'img':'mk2.png','title':'짬뽕집', 'target':'http://www.daum.net', 'lat':33.460901, 'lng': 126.580267},
+		{'img':'mk3.png','title':'닭발집', 'target':'http://www.google.com', 'lat':33.440901, 'lng': 126.573267}
 	];
 	displaymarker(data);*/
 };

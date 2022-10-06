@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 어디를 통해서 들어오는지! -->
+<mapper namespace="com.multi.mapper.MarkerMapper">
+	<!-- select를 부르면 argument로 String형태로 들어올 것이고 sql의 결과를 custDTO로 보내겠다. -->
+	<select id="select" parameterType="Integer" resultType="MarkerDTO">
+		SELECT * FROM marker WHERE id=#{id}
+	</select>
+	<select id="selectall" resultType="MarkerDTO">
+		SELECT * FROM marker
+	</select>
+	<select id="getloc" parameterType="String" resultType="MarkerDTO">
+		SELECT * FROM marker WHERE loc=#{loc}
+	</select>
+	<insert id="insert" parameterType="MarkerDTO">
+		INSERT INTO marker VALUES (NULL,#{title},#{target},#{lat},#{lng},#{img},#{loc})
+	</insert>
+	<update id="update" parameterType="MarkerDTO">
+		UPDATE marker SET title=#{title},target=#{target},lat=#{lat},lng=#{lng},img=#{img},loc=#{loc} WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="Integer">
+		DELETE FROM marker WHERE id=#{id}
+	</delete>
+	
+</mapper>
