@@ -74,16 +74,18 @@ public class AController {
 	
 	//getdata
 	@RequestMapping("/getmarker")
-	public Object getmarker() {
+	//s,b,j loc을 받아옴
+	public Object getmarker(String loc) {
 		List<MarkerDTO> marker = null;
 		
 		JSONArray ja = new JSONArray();
 		
 		try {
-			marker= marker_service.get();
+			marker= marker_service.getloc(loc);
 			for(MarkerDTO m : marker) {
 				JSONObject jo = new JSONObject();
-				jo.put("id", m.getId());
+				//굳이 필요 없음
+				//jo.put("id", m.getId());
 				jo.put("title", m.getTitle());
 				jo.put("target", m.getTarget());
 				jo.put("lat", m.getLat());
@@ -93,7 +95,6 @@ public class AController {
 				
 				ja.add(jo);
 			}
-			System.out.println(ja);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

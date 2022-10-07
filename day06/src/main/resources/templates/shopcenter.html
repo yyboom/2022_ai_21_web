@@ -26,13 +26,19 @@ function display(){
 };
 
 function displaymarker(data){
+	// 마커 이미지의 이미지 주소입니다
+	var imageSrc = "/img/marker.png"; 
+    // 마커 이미지의 이미지 크기 입니다
+    var imageSize = new kakao.maps.Size(24, 35); 
+    // 마커 이미지를 생성합니다    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+    
 	//for문을 통해서 marker을 붙임
 	for(var i=0; i<data.length; i++){
 	    var marker = new kakao.maps.Marker({
 	        map: map, // 마커를 표시할 지도
 	        position: new kakao.maps.LatLng(data[i].lat, data[i].lng) // 마커를 표시할 위치
 	        //title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-	       // image : markerImage // 마커 이미지 
 	    });
 	    //info창
 		var iwContent = '<h3>'+data[i].title+'</h3>';
@@ -41,7 +47,8 @@ function displaymarker(data){
 
 		// 인포윈도우를 생성합니다
 		var infowindow = new kakao.maps.InfoWindow({
-	    	position : iwPosition, 
+	    	position : iwPosition,
+	    	//titledata가 들어감!
 	    	content : iwContent 
 		});
 		//마커 이벤트
@@ -77,13 +84,14 @@ function displaymarker(data){
 	    };
 	}
 };
-function getdata(){
+function getdata(loc){
 	//data안에는 맛집정보가 들어감
 	//원래는 database안에서 정보를 가져와서 뿌리는 것
 	//ajax로 지도에다가 뿌려보지
 	// /getmarker
 	$.ajax({
 		url:'/getmarker',
+		data:{'loc':loc},
 		success:function(data){
 			displaymarker(data);
 		}
@@ -95,15 +103,33 @@ function getdata(){
 	];
 	displaymarker(data);*/
 };
-
+function go(lat,lng,loc){
+	//button클릭 시마다 지도를 이동시킴!
+	// 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(lat,lng);
+    
+    // 지도 중심을 부드럽게 이동시킵니다
+    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+    map.panTo(moveLatLon); 
+    //marker정보를 요청함!
+    getdata(loc);
+};
 $(document).ready(function(){
 	display();
 	//click을 하면 서버에서 데이터를 가져와서 수많은 마커를 찍는다.(example 마커)
-	$('#bt').click(function(){
-		getdata();
+	$('#bt1').click(function(){
+		go(37.5527401,126.9930781,'s');
+	});
+	$('#bt2').click(function(){
+		go(35.1223984,129.0896448,'b');
+	});
+	$('#bt3').click(function(){
+		go(33.5199183,126.6142571,'j');
 	});
 });
 </script>
 <h1>Shop Center</h1>
-<button id="bt">click</button>
+<button id="bt1">Seoul</button>\
+<button id="bt2">Busan</button>
+<button id="bt3">Jeju</button>
 <div id="map"></div>
