@@ -14,7 +14,7 @@ function del(id){
 	var c = confirm('삭제하시겠습니까?')
 	if(c==true){
 		//main이 아닌 cartcontroller에서 동작해야하기에 /cart/deletecart로 가야함
-		location.href='/cart/deletecart?id='+id;
+		location.href='[[@{/cart/deletecart?id=}]]'+id;
 	}
 }
 </script>
@@ -57,7 +57,7 @@ function del(id){
 						<td th:text="${ca.cnt}">cnt</td>
 						<td th:text="${ca.total_price}">total_price</td>
 						<td th:text="${#dates.format(ca.rdate, 'yyyy-MM-dd')}">rdate</td>
-						<td><img th:src="'/img/'+${ca.item_imgname}"></td>
+						<td><img th:src="@{/img/}+${ca.item_imgname}"></td>
 						<td>
 							<!-- id로 쓰면 button이 하나의 아이디로 묶여있기 때문에 cart에는 다지워진것처럼 나오게됨!! -->
       						<!-- conlick을 써야함! -->
@@ -73,10 +73,10 @@ function del(id){
 	</div>
 </div>
     <!-- Page level plugins -->
-    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/js/demo/datatables-demo.js"></script>
+    <script th:src="@{/js/demo/datatables-demo.js}"></script>
 
 <!-- 필요하면 이밑에 content row를 넣으면 됨! -->

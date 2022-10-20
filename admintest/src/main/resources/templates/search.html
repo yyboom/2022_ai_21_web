@@ -33,7 +33,7 @@
 				<tbody>
 					<!-- for문 돌리기 -->
 					<tr th:each = "i:${itemlist}">
-						<td><img th:src="'/img/'+${i.imgname}"></td>
+						<td><img th:src="@{/img}+${i.imgname}"></td>
 						<td><a th:href="@{/item/detail(id=${i.id})}" th:text="${i.id}">id</a></td>
 						<td th:text="${i.name}">name</td>
 						<td th:text="${i.price}">price</td>
@@ -45,10 +45,10 @@
 	</div>
 </div>
     <!-- Page level plugins -->
-    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script th:src="@{/vendor/datatables/jquery.dataTables.min.js}"></script>
+    <script th:src="@{/vendor/datatables/dataTables.bootstrap4.min.js}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/js/demo/datatables-demo.js"></script>
+    <script th:src="@{/js/demo/datatables-demo.js}"></script>
 
 <!-- 필요하면 이밑에 content row를 넣으면 됨! -->

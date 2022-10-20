@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('#update_btn').click(function(){
 		$('#cust_form').attr({
 			'method':'post',
-			'action':'/cust/update'
+			'action':'[[@{/cust/update}]]'
 		});
 		$('#cust_form').submit();
 	});
@@ -14,7 +14,7 @@ $(document).ready(function(){
 function del(id){
 	var c =confirm('삭제하시겠습니까?');
 	if(c==true){
-		location.href='/cust/delete?id='+id;
+		location.href='[[@{/cust/delete?id=}]]'+id;
 	}
 }
 </script>

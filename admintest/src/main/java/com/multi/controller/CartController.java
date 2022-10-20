@@ -46,10 +46,10 @@ public class CartController {
 	}
 	
 	//resister
-	@RequestMapping("/resister")
-	public String resister(Model model) {
+	@RequestMapping("/register")
+	public String register(Model model) {
 		//center는 cart folder밑에 get이 들어가게 된다!
-		model.addAttribute("center", dir+"resister");
+		model.addAttribute("center", dir+"register");
 		return "index";
 	}
 

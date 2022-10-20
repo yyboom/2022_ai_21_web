@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$('#register_btn').click(function(){
 		$('#administer_form').attr({
 			'method':'post',
-			'action':'/adm/registerimpl'
+			'action':'[[@{/adm/registerimpl}]]'
 		});
 		$('#administer_form').submit();
 	});

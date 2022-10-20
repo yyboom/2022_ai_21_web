@@ -6,7 +6,7 @@ $(document).ready(function(){
 			//form사이에서 파일로 전송을 할때는 여기서 타입을 변경한 후 전송이 되게 됨!
 			'enctype':'multipart/form-data',
 			'method':'post',
-			'action':'/item/registerimpl'
+			'action':'[[@{/item/registerimpl}]]'
 		});
 		$('#register_form').submit();
 	});

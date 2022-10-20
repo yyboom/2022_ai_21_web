@@ -3,7 +3,7 @@
 //문서
 function getCustCnt(){
 	$.ajax({
-		url:'/custcnt',
+		url:'[[{@/custcnt}]]',
 		success:function(data){
 			$('#cust_cnt').text(data);
 		}
@@ -11,7 +11,7 @@ function getCustCnt(){
 };
 function getCartItemCnt(){
 	$.ajax({
-		url:'/cartitemcnt',
+		url:'[[{@/cartitemcnt}]]',
 		success:function(data){
 			$('#cart_item_cnt').text(data);
 		}
@@ -19,7 +19,7 @@ function getCartItemCnt(){
 };
 function getCartPrice(){
 	$.ajax({
-		url:'/cartprice',
+		url:'[[{@/cartprice}]]',
 		success:function(data){
 			$('#cart_price').text(data);
 		}
@@ -85,7 +85,7 @@ function display1(data){
 function getdata1(){
 	//ajax로 서버에서 data를 요청
 	$.ajax({
-		url:'/chart1',
+		url:'[[{@/chart1}]]',
 		success:function(data){
 			//data의 모양 //{"month":[1,2,3,4,5,6], "result":[{},{}]}
 			display1(data);
@@ -134,7 +134,7 @@ function display2(data){
 function getdata2(sm,em){
 	//ajax로 서버에서 data를 요청
 	$.ajax({
-		url:'/chart2',
+		url:'[[{@/chart2}]]',
 		data:{'ssm':sm,'eem':em},
 		success:function(data){
 			//data의 모양 //{"month":[1,2,3,4,5,6], "result":[{},{}]}

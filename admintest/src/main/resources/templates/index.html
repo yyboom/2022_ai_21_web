@@ -14,26 +14,26 @@
 <title>Shopping mall Admin</title>
 
 <!-- Custom fonts for this template-->
-<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+<link th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet"
 	type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet">
 
 <!-- Custom styles for this template-->
-<link href="/css/sb-admin-2.min.css" rel="stylesheet">
+<link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet">
 <!-- Bootstrap core JavaScript-->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="/js/sb-admin-2.min.js"></script>
+<script th:src="@{/js/sb-admin-2.min.js}"></script>
 
 <!-- Page level plugins -->
-<script src="/vendor/chart.js/Chart.min.js"></script>
+<script th:src="@{/vendor/chart.js/Chart.min.js}"></script>
 
 <!-- Charts library -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -48,7 +48,7 @@ $(document).ready(function(){
 		$('#login_form').attr({
 			method:'post',
 			//maincontroller로 전송하면 되기 때문에 그냥 /loginimpl로 보냄!
-			action:'/loginimpl'
+			action:'[[@{/loginimpl}]]'
 		});
 		$('#login_form').submit();
 	});
@@ -58,7 +58,7 @@ $(document).ready(function(){
 		$('#search_form').attr({
 			method:'get',
 			//maincontroller로 전송하면 되기 때문에 그냥 /searchimpl로 보냄!
-			action:'/searchimpl'
+			action:'[[@{/searchimpl}]]'
 		});
 		$('#search_form').submit();
 	});
@@ -93,7 +93,7 @@ $(document).ready(function(){
 			<hr class="sidebar-divider my-0">
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active"><a class="nav-link" href="/"> <i
+			<li class="nav-item active"><a class="nav-link" th:href="@{/}"> <i
 					class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
 
 			<!-- Divider -->
@@ -112,8 +112,8 @@ $(document).ready(function(){
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Customer:</h6>
-						<a class="collapse-item" href="/cust/register">Register</a> <a
-							class="collapse-item" href="/cust/get">Get</a>
+						<a class="collapse-item" th:href="@{/cust/register}">Register</a> <a
+							class="collapse-item" th:href="@{/cust/get}">Get</a>
 					</div>
 				</div></li>
 			<!-- Adnub menu - Pages Collapse Menu -->
@@ -127,8 +127,8 @@ $(document).ready(function(){
 					data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Administer:</h6>
-						<a class="collapse-item" href="/adm/register">Register</a> <a
-							class="collapse-item" href="/adm/get">Get</a>
+						<a class="collapse-item" th:href="@{/adm/register}">Register</a> <a
+							class="collapse-item" th:href="@{/adm/get}">Get</a>
 					</div>
 				</div></li>
 
@@ -142,8 +142,8 @@ $(document).ready(function(){
 					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Item:</h6>
-						<a class="collapse-item" href="/item/register">Register</a>
-						<a class="collapse-item" href="/item/get">Get</a>
+						<a class="collapse-item" th:href="@{/item/register}">Register</a>
+						<a class="collapse-item" th:href="@{/item/get}">Get</a>
 					</div>
 				</div></li>
 
@@ -158,8 +158,8 @@ $(document).ready(function(){
 					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 					<div class="bg-white py-2 collapse-inner rounded">
 						<h6 class="collapse-header">Cart:</h6>
-						<a class="collapse-item" href="/cart/register">Register</a>
-						<a class="collapse-item" href="/cart/get">Get</a>
+						<a class="collapse-item" th:href="@{/cart/register}">Register</a>
+						<a class="collapse-item" th:href="@{/cart/get}">Get</a>
 					</div>
 				</div></li>				
 			
@@ -250,7 +250,7 @@ $(document).ready(function(){
 							aria-expanded="false"> <span
 								th:text="${session.loginadmin.id}"
 								class="mr-2 d-none d-lg-inline text-gray-600 small"></span><img class="img-profile rounded-circle"
-								src="/img/undraw_profile.svg">
+								th:src="@{/img/undraw_profile.svg}">
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -265,7 +265,7 @@ $(document).ready(function(){
 									Activity Log
 								</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/logout" data-toggle="modal"
+								<a class="dropdown-item" th:href="@{/logout}" data-toggle="modal"
 									data-target="#logoutModal"> <i
 									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Logout
@@ -321,7 +321,7 @@ $(document).ready(function(){
 					<div class="modal-footer">
 						<button class="btn btn-secondary" type="button"
 							data-dismiss="modal">Cancel</button>
-						<a class="btn btn-primary" href="/logout">Logout</a>
+						<a class="btn btn-primary" th:href="@{/logout}">Logout</a>
 					</div>
 				</div>
 			</div>
